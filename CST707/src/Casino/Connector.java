@@ -47,7 +47,7 @@ public class Connector {
         return stm.executeUpdate(update);
     }
     
-    public ResultSet checkAvailability(String roomType, String fromDate, String toDate) throws SQLException{
+    public ResultSet checkAvailability(String roomType, Date fromDate, Date toDate) throws SQLException{
         CallableStatement cs = null;
         cs = conn.prepareCall("{call CHECKAVAILABILITY("+roomType+","+fromDate+","+toDate+")}");
         return cs.executeQuery();

@@ -39,10 +39,6 @@ public class Rooms extends javax.swing.JFrame {
         jList2 = new javax.swing.JList();
         CheckAvailability = new javax.swing.JButton();
         AvailableYesNo = new javax.swing.JLabel();
-        MemberFirstNamePrefill1 = new javax.swing.JTextField();
-        MemberLastNamePrefill1 = new javax.swing.JTextField();
-        CasinoPrefill1 = new javax.swing.JTextField();
-        MemberLevelPrefill = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -86,7 +82,7 @@ public class Rooms extends javax.swing.JFrame {
         jList2.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jList2.setForeground(new java.awt.Color(255, 255, 255));
         jList2.setModel(new javax.swing.AbstractListModel() {
-            String[] strings = { "King", "Queen", "Double" };
+            String[] strings = { "Double", "Queen", "King Studio" };
             public int getSize() { return strings.length; }
             public Object getElementAt(int i) { return strings[i]; }
         });
@@ -113,61 +109,6 @@ public class Rooms extends javax.swing.JFrame {
         getContentPane().add(AvailableYesNo);
         AvailableYesNo.setBounds(250, 180, 140, 20);
 
-        MemberFirstNamePrefill1.setFont(new java.awt.Font("Tahoma", 2, 11)); // NOI18N
-        MemberFirstNamePrefill1.setForeground(new java.awt.Color(255, 255, 255));
-        MemberFirstNamePrefill1.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
-        MemberFirstNamePrefill1.setText("First");
-        MemberFirstNamePrefill1.setBorder(null);
-        MemberFirstNamePrefill1.setOpaque(false);
-        MemberFirstNamePrefill1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                MemberFirstNamePrefill1ActionPerformed(evt);
-            }
-        });
-        getContentPane().add(MemberFirstNamePrefill1);
-        MemberFirstNamePrefill1.setBounds(240, 250, 60, 20);
-
-        MemberLastNamePrefill1.setFont(new java.awt.Font("Tahoma", 2, 11)); // NOI18N
-        MemberLastNamePrefill1.setForeground(new java.awt.Color(255, 255, 255));
-        MemberLastNamePrefill1.setText(" Last Prefill");
-        MemberLastNamePrefill1.setBorder(null);
-        MemberLastNamePrefill1.setOpaque(false);
-        MemberLastNamePrefill1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                MemberLastNamePrefill1ActionPerformed(evt);
-            }
-        });
-        getContentPane().add(MemberLastNamePrefill1);
-        MemberLastNamePrefill1.setBounds(300, 250, 90, 20);
-
-        CasinoPrefill1.setFont(new java.awt.Font("Tahoma", 2, 11)); // NOI18N
-        CasinoPrefill1.setForeground(new java.awt.Color(255, 255, 255));
-        CasinoPrefill1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        CasinoPrefill1.setText("Casino Prefill");
-        CasinoPrefill1.setBorder(null);
-        CasinoPrefill1.setOpaque(false);
-        CasinoPrefill1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                CasinoPrefill1ActionPerformed(evt);
-            }
-        });
-        getContentPane().add(CasinoPrefill1);
-        CasinoPrefill1.setBounds(240, 260, 130, 20);
-
-        MemberLevelPrefill.setFont(new java.awt.Font("Tahoma", 2, 11)); // NOI18N
-        MemberLevelPrefill.setForeground(new java.awt.Color(255, 255, 255));
-        MemberLevelPrefill.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        MemberLevelPrefill.setText("Member Level Prefill");
-        MemberLevelPrefill.setBorder(null);
-        MemberLevelPrefill.setOpaque(false);
-        MemberLevelPrefill.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                MemberLevelPrefillActionPerformed(evt);
-            }
-        });
-        getContentPane().add(MemberLevelPrefill);
-        MemberLevelPrefill.setBounds(250, 270, 130, 20);
-
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Casino/hotel room resized.jpg"))); // NOI18N
         getContentPane().add(jLabel1);
         jLabel1.setBounds(0, 0, 400, 310);
@@ -178,22 +119,6 @@ public class Rooms extends javax.swing.JFrame {
     private void CheckAvailabilityActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CheckAvailabilityActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_CheckAvailabilityActionPerformed
-
-    private void MemberFirstNamePrefill1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MemberFirstNamePrefill1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_MemberFirstNamePrefill1ActionPerformed
-
-    private void MemberLastNamePrefill1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MemberLastNamePrefill1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_MemberLastNamePrefill1ActionPerformed
-
-    private void CasinoPrefill1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CasinoPrefill1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_CasinoPrefill1ActionPerformed
-
-    private void MemberLevelPrefillActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MemberLevelPrefillActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_MemberLevelPrefillActionPerformed
 
     /**
      * @param args the command line arguments
@@ -231,15 +156,11 @@ public class Rooms extends javax.swing.JFrame {
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel AvailableYesNo;
-    private javax.swing.JTextField CasinoPrefill1;
     private javax.swing.JButton CheckAvailability;
     private javax.swing.JLabel CheckInDate;
     private javax.swing.JLabel CheckOutDate;
     private javax.swing.JTextField DateOfCheckIn;
     private javax.swing.JTextField DateOfCheckOut;
-    private javax.swing.JTextField MemberFirstNamePrefill1;
-    private javax.swing.JTextField MemberLastNamePrefill1;
-    private javax.swing.JTextField MemberLevelPrefill;
     private javax.swing.JScrollPane RoomList;
     private javax.swing.JLabel RoomTypeLabel;
     private javax.swing.JLabel jLabel1;

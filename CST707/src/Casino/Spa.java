@@ -40,10 +40,6 @@ public class Spa extends javax.swing.JFrame {
         Haircut = new javax.swing.JCheckBox();
         Massage = new javax.swing.JCheckBox();
         Pedicure = new javax.swing.JCheckBox();
-        MemberFirstNamePrefill = new javax.swing.JTextField();
-        MemberLastNamePrefill = new javax.swing.JTextField();
-        CasinoPrefill = new javax.swing.JTextField();
-        MemberLevelPrefill = new javax.swing.JTextField();
         Background = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -90,80 +86,25 @@ public class Spa extends javax.swing.JFrame {
         Facial.setText("Facial");
         Facial.setOpaque(false);
         getContentPane().add(Facial);
-        Facial.setBounds(50, 70, 90, 23);
+        Facial.setBounds(50, 70, 90, 25);
 
         Haircut.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         Haircut.setText("Haircut");
         Haircut.setOpaque(false);
         getContentPane().add(Haircut);
-        Haircut.setBounds(70, 90, 100, 23);
+        Haircut.setBounds(70, 90, 100, 25);
 
         Massage.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         Massage.setText("Massage");
         Massage.setOpaque(false);
         getContentPane().add(Massage);
-        Massage.setBounds(90, 110, 110, 23);
+        Massage.setBounds(90, 110, 110, 25);
 
         Pedicure.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         Pedicure.setText("Pedicure");
         Pedicure.setOpaque(false);
         getContentPane().add(Pedicure);
-        Pedicure.setBounds(110, 130, 110, 23);
-
-        MemberFirstNamePrefill.setFont(new java.awt.Font("Tahoma", 2, 11)); // NOI18N
-        MemberFirstNamePrefill.setForeground(new java.awt.Color(255, 255, 255));
-        MemberFirstNamePrefill.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
-        MemberFirstNamePrefill.setText("First");
-        MemberFirstNamePrefill.setBorder(null);
-        MemberFirstNamePrefill.setOpaque(false);
-        MemberFirstNamePrefill.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                MemberFirstNamePrefillActionPerformed(evt);
-            }
-        });
-        getContentPane().add(MemberFirstNamePrefill);
-        MemberFirstNamePrefill.setBounds(10, 180, 60, 14);
-
-        MemberLastNamePrefill.setFont(new java.awt.Font("Tahoma", 2, 11)); // NOI18N
-        MemberLastNamePrefill.setForeground(new java.awt.Color(255, 255, 255));
-        MemberLastNamePrefill.setText("Last Prefill");
-        MemberLastNamePrefill.setBorder(null);
-        MemberLastNamePrefill.setOpaque(false);
-        MemberLastNamePrefill.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                MemberLastNamePrefillActionPerformed(evt);
-            }
-        });
-        getContentPane().add(MemberLastNamePrefill);
-        MemberLastNamePrefill.setBounds(70, 180, 90, 14);
-
-        CasinoPrefill.setFont(new java.awt.Font("Tahoma", 2, 11)); // NOI18N
-        CasinoPrefill.setForeground(new java.awt.Color(255, 255, 255));
-        CasinoPrefill.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        CasinoPrefill.setText("Casino Prefill");
-        CasinoPrefill.setBorder(null);
-        CasinoPrefill.setOpaque(false);
-        CasinoPrefill.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                CasinoPrefillActionPerformed(evt);
-            }
-        });
-        getContentPane().add(CasinoPrefill);
-        CasinoPrefill.setBounds(10, 190, 130, 14);
-
-        MemberLevelPrefill.setFont(new java.awt.Font("Tahoma", 2, 11)); // NOI18N
-        MemberLevelPrefill.setForeground(new java.awt.Color(255, 255, 255));
-        MemberLevelPrefill.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        MemberLevelPrefill.setText("Member Level Prefill");
-        MemberLevelPrefill.setBorder(null);
-        MemberLevelPrefill.setOpaque(false);
-        MemberLevelPrefill.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                MemberLevelPrefillActionPerformed(evt);
-            }
-        });
-        getContentPane().add(MemberLevelPrefill);
-        MemberLevelPrefill.setBounds(20, 200, 130, 15);
+        Pedicure.setBounds(110, 130, 110, 25);
 
         Background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Casino/spa4resized.jpg"))); // NOI18N
         getContentPane().add(Background);
@@ -172,25 +113,9 @@ public class Spa extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void MemberFirstNamePrefillActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MemberFirstNamePrefillActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_MemberFirstNamePrefillActionPerformed
-
-    private void MemberLastNamePrefillActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MemberLastNamePrefillActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_MemberLastNamePrefillActionPerformed
-
-    private void CasinoPrefillActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CasinoPrefillActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_CasinoPrefillActionPerformed
-
     private void DateFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DateFieldActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_DateFieldActionPerformed
-
-    private void MemberLevelPrefillActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MemberLevelPrefillActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_MemberLevelPrefillActionPerformed
    {
       setBackground (Color.cyan);
       setPreferredSize (new Dimension(500,500));
@@ -231,15 +156,11 @@ public class Spa extends javax.swing.JFrame {
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Background;
-    private javax.swing.JTextField CasinoPrefill;
     private javax.swing.JTextField DateField;
     private javax.swing.JLabel DateOfService;
     private javax.swing.JCheckBox Facial;
     private javax.swing.JCheckBox Haircut;
     private javax.swing.JCheckBox Massage;
-    private javax.swing.JTextField MemberFirstNamePrefill;
-    private javax.swing.JTextField MemberLastNamePrefill;
-    private javax.swing.JTextField MemberLevelPrefill;
     private javax.swing.JCheckBox Pedicure;
     private javax.swing.JTextField TimeField;
     private javax.swing.JLabel TimeOfService;

@@ -27,13 +27,12 @@ public class GamingDevice extends javax.swing.JFrame {
     private void initComponents() {
 
         Roulette = new javax.swing.JCheckBox();
-        BlackJack = new javax.swing.JCheckBox();
-        Poker = new javax.swing.JCheckBox();
-        Slots = new javax.swing.JCheckBox();
-        MemberFirstNamePrefill1 = new javax.swing.JTextField();
-        MemberLastNamePrefill1 = new javax.swing.JTextField();
-        CasinoPrefill1 = new javax.swing.JTextField();
-        MemberLevelPrefill = new javax.swing.JTextField();
+        PokerLowStakes = new javax.swing.JCheckBox();
+        PokerMediumStakes = new javax.swing.JCheckBox();
+        PokerHighStakes = new javax.swing.JCheckBox();
+        OneDollarSlot = new javax.swing.JCheckBox();
+        QuarterSlot = new javax.swing.JCheckBox();
+        FortuneWheel = new javax.swing.JCheckBox();
         Background = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -46,76 +45,48 @@ public class GamingDevice extends javax.swing.JFrame {
         Roulette.setText("Roulette");
         Roulette.setOpaque(false);
         getContentPane().add(Roulette);
-        Roulette.setBounds(70, 70, 100, 23);
+        Roulette.setBounds(10, 30, 220, 25);
 
-        BlackJack.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        BlackJack.setText("Black Jack");
-        BlackJack.setOpaque(false);
-        getContentPane().add(BlackJack);
-        BlackJack.setBounds(70, 90, 100, 23);
+        PokerLowStakes.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        PokerLowStakes.setText("Poker Low Stakes");
+        PokerLowStakes.setOpaque(false);
+        getContentPane().add(PokerLowStakes);
+        PokerLowStakes.setBounds(30, 40, 180, 40);
 
-        Poker.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        Poker.setText("Poker");
-        Poker.setOpaque(false);
-        getContentPane().add(Poker);
-        Poker.setBounds(70, 110, 100, 23);
+        PokerMediumStakes.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        PokerMediumStakes.setText("Poker Medium Stakes");
+        PokerMediumStakes.setOpaque(false);
+        getContentPane().add(PokerMediumStakes);
+        PokerMediumStakes.setBounds(50, 70, 180, 25);
 
-        Slots.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        Slots.setText("Slots");
-        Slots.setOpaque(false);
-        getContentPane().add(Slots);
-        Slots.setBounds(70, 130, 100, 23);
+        PokerHighStakes.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        PokerHighStakes.setText("Poker High Stakes");
+        PokerHighStakes.setOpaque(false);
+        getContentPane().add(PokerHighStakes);
+        PokerHighStakes.setBounds(70, 90, 150, 25);
 
-        MemberFirstNamePrefill1.setFont(new java.awt.Font("Tahoma", 2, 12)); // NOI18N
-        MemberFirstNamePrefill1.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
-        MemberFirstNamePrefill1.setText("First");
-        MemberFirstNamePrefill1.setBorder(null);
-        MemberFirstNamePrefill1.setOpaque(false);
-        MemberFirstNamePrefill1.addActionListener(new java.awt.event.ActionListener() {
+        OneDollarSlot.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        OneDollarSlot.setText("One Dollar Slot");
+        OneDollarSlot.setOpaque(false);
+        OneDollarSlot.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                MemberFirstNamePrefill1ActionPerformed(evt);
+                OneDollarSlotActionPerformed(evt);
             }
         });
-        getContentPane().add(MemberFirstNamePrefill1);
-        MemberFirstNamePrefill1.setBounds(230, 10, 60, 15);
+        getContentPane().add(OneDollarSlot);
+        OneDollarSlot.setBounds(90, 110, 290, 25);
 
-        MemberLastNamePrefill1.setFont(new java.awt.Font("Tahoma", 2, 12)); // NOI18N
-        MemberLastNamePrefill1.setText(" Last Prefill");
-        MemberLastNamePrefill1.setBorder(null);
-        MemberLastNamePrefill1.setOpaque(false);
-        MemberLastNamePrefill1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                MemberLastNamePrefill1ActionPerformed(evt);
-            }
-        });
-        getContentPane().add(MemberLastNamePrefill1);
-        MemberLastNamePrefill1.setBounds(290, 10, 90, 15);
+        QuarterSlot.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        QuarterSlot.setText("Quarter Slot");
+        QuarterSlot.setOpaque(false);
+        getContentPane().add(QuarterSlot);
+        QuarterSlot.setBounds(110, 130, 220, 25);
 
-        CasinoPrefill1.setFont(new java.awt.Font("Tahoma", 2, 12)); // NOI18N
-        CasinoPrefill1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        CasinoPrefill1.setText("Casino Prefill");
-        CasinoPrefill1.setBorder(null);
-        CasinoPrefill1.setOpaque(false);
-        CasinoPrefill1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                CasinoPrefill1ActionPerformed(evt);
-            }
-        });
-        getContentPane().add(CasinoPrefill1);
-        CasinoPrefill1.setBounds(240, 30, 130, 15);
-
-        MemberLevelPrefill.setFont(new java.awt.Font("Tahoma", 2, 12)); // NOI18N
-        MemberLevelPrefill.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        MemberLevelPrefill.setText("Member Level Prefill");
-        MemberLevelPrefill.setBorder(null);
-        MemberLevelPrefill.setOpaque(false);
-        MemberLevelPrefill.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                MemberLevelPrefillActionPerformed(evt);
-            }
-        });
-        getContentPane().add(MemberLevelPrefill);
-        MemberLevelPrefill.setBounds(240, 50, 130, 15);
+        FortuneWheel.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        FortuneWheel.setText("Wheel of Fortune");
+        FortuneWheel.setOpaque(false);
+        getContentPane().add(FortuneWheel);
+        FortuneWheel.setBounds(130, 150, 220, 25);
 
         Background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Casino/gambling-dice.jpg"))); // NOI18N
         getContentPane().add(Background);
@@ -124,21 +95,9 @@ public class GamingDevice extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void MemberFirstNamePrefill1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MemberFirstNamePrefill1ActionPerformed
+    private void OneDollarSlotActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_OneDollarSlotActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_MemberFirstNamePrefill1ActionPerformed
-
-    private void MemberLastNamePrefill1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MemberLastNamePrefill1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_MemberLastNamePrefill1ActionPerformed
-
-    private void CasinoPrefill1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CasinoPrefill1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_CasinoPrefill1ActionPerformed
-
-    private void MemberLevelPrefillActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MemberLevelPrefillActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_MemberLevelPrefillActionPerformed
+    }//GEN-LAST:event_OneDollarSlotActionPerformed
 
     /**
      * @param args the command line arguments
@@ -171,13 +130,12 @@ public class GamingDevice extends javax.swing.JFrame {
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Background;
-    private javax.swing.JCheckBox BlackJack;
-    private javax.swing.JTextField CasinoPrefill1;
-    private javax.swing.JTextField MemberFirstNamePrefill1;
-    private javax.swing.JTextField MemberLastNamePrefill1;
-    private javax.swing.JTextField MemberLevelPrefill;
-    private javax.swing.JCheckBox Poker;
+    private javax.swing.JCheckBox FortuneWheel;
+    private javax.swing.JCheckBox OneDollarSlot;
+    private javax.swing.JCheckBox PokerHighStakes;
+    private javax.swing.JCheckBox PokerLowStakes;
+    private javax.swing.JCheckBox PokerMediumStakes;
+    private javax.swing.JCheckBox QuarterSlot;
     private javax.swing.JCheckBox Roulette;
-    private javax.swing.JCheckBox Slots;
     // End of variables declaration//GEN-END:variables
 }

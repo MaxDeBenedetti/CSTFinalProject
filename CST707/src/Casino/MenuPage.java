@@ -41,8 +41,9 @@ public class MenuPage extends javax.swing.JFrame {
     private void initComponents() {
 
         NewMemberBox = new javax.swing.JCheckBox();
-        MemberIDLabel = new javax.swing.JLabel();
-        MemberID = new javax.swing.JTextField();
+        MemberNameLabel = new javax.swing.JLabel();
+        FirstName = new javax.swing.JTextField();
+        LastName = new javax.swing.JTextField();
         MemberLevelLabel = new javax.swing.JLabel();
         MemberLevel = new javax.swing.JTextField();
         CasinoLabel = new javax.swing.JLabel();
@@ -72,23 +73,30 @@ public class MenuPage extends javax.swing.JFrame {
         NewMemberBox.setText("New Member");
         NewMemberBox.setOpaque(false);
         getContentPane().add(NewMemberBox);
-        NewMemberBox.setBounds(90, 0, 110, 25);
+        NewMemberBox.setBounds(10, 0, 110, 25);
 
-        MemberIDLabel.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        MemberIDLabel.setForeground(new java.awt.Color(255, 255, 255));
-        MemberIDLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        MemberIDLabel.setText("Member ID");
-        getContentPane().add(MemberIDLabel);
-        MemberIDLabel.setBounds(20, 30, 70, 20);
+        MemberNameLabel.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        MemberNameLabel.setForeground(new java.awt.Color(255, 255, 255));
+        MemberNameLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        MemberNameLabel.setText("Member Name");
+        getContentPane().add(MemberNameLabel);
+        MemberNameLabel.setBounds(0, 30, 90, 20);
 
-        MemberID.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        MemberID.setForeground(new java.awt.Color(255, 255, 255));
-        MemberID.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        MemberID.setText("######");
-        MemberID.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        MemberID.setOpaque(false);
-        getContentPane().add(MemberID);
-        MemberID.setBounds(100, 30, 100, 19);
+        FirstName.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        FirstName.setForeground(new java.awt.Color(255, 255, 255));
+        FirstName.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        FirstName.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        FirstName.setOpaque(false);
+        getContentPane().add(FirstName);
+        FirstName.setBounds(100, 30, 90, 19);
+
+        LastName.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        LastName.setForeground(new java.awt.Color(255, 255, 255));
+        LastName.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        LastName.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        LastName.setOpaque(false);
+        getContentPane().add(LastName);
+        LastName.setBounds(190, 30, 100, 19);
 
         MemberLevelLabel.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         MemberLevelLabel.setForeground(new java.awt.Color(255, 255, 255));
@@ -122,7 +130,7 @@ public class MenuPage extends javax.swing.JFrame {
         CasinoName.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         CasinoName.setForeground(new java.awt.Color(255, 255, 255));
         CasinoName.setModel(new javax.swing.AbstractListModel() {
-            String[] strings = { "Horseshoe", "DiamondJacks", "Sams Town", "Margarittaville", "Harrah's" };
+            String[] strings = { "Orbit", "Rost Petals", "Horse Shoe", "Oasis", "Forum" };
             public int getSize() { return strings.length; }
             public Object getElementAt(int i) { return strings[i]; }
         });
@@ -160,12 +168,12 @@ public class MenuPage extends javax.swing.JFrame {
 
         StatePrefill.setFont(new java.awt.Font("Tahoma", 2, 11)); // NOI18N
         StatePrefill.setForeground(new java.awt.Color(255, 255, 255));
-        StatePrefill.setHorizontalAlignment(javax.swing.JTextField.LEFT);
+        StatePrefill.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
         StatePrefill.setText("State Prefill");
         StatePrefill.setBorder(null);
         StatePrefill.setOpaque(false);
         getContentPane().add(StatePrefill);
-        StatePrefill.setBounds(10, 210, 90, 14);
+        StatePrefill.setBounds(10, 210, 60, 14);
 
         ZipPrefill.setFont(new java.awt.Font("Tahoma", 2, 11)); // NOI18N
         ZipPrefill.setForeground(new java.awt.Color(255, 255, 255));
@@ -174,7 +182,7 @@ public class MenuPage extends javax.swing.JFrame {
         ZipPrefill.setBorder(null);
         ZipPrefill.setOpaque(false);
         getContentPane().add(ZipPrefill);
-        ZipPrefill.setBounds(100, 210, 90, 14);
+        ZipPrefill.setBounds(80, 210, 50, 14);
 
         PhoneNumberPrefill.setFont(new java.awt.Font("Tahoma", 2, 11)); // NOI18N
         PhoneNumberPrefill.setForeground(new java.awt.Color(255, 255, 255));
@@ -198,7 +206,7 @@ public class MenuPage extends javax.swing.JFrame {
         Restaurant.setText("Restaurant");
         Menu.add(Restaurant);
 
-        Device.setText("Device");
+        Device.setText("Gaming Device");
         Menu.add(Device);
 
         Spa.setText("Spa");
@@ -247,11 +255,12 @@ public class MenuPage extends javax.swing.JFrame {
     private javax.swing.JScrollPane CasinoScrollPanel;
     private javax.swing.JTextField CityPrefill;
     private javax.swing.JMenu Device;
+    private javax.swing.JTextField FirstName;
+    private javax.swing.JTextField LastName;
     private javax.swing.JMenu Member;
-    private javax.swing.JTextField MemberID;
-    private javax.swing.JLabel MemberIDLabel;
     private javax.swing.JTextField MemberLevel;
     private javax.swing.JLabel MemberLevelLabel;
+    private javax.swing.JLabel MemberNameLabel;
     private javax.swing.JMenuBar Menu;
     private javax.swing.JCheckBox NewMemberBox;
     private javax.swing.JTextField PhoneNumberPrefill;

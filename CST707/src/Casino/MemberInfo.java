@@ -46,8 +46,6 @@ public class MemberInfo extends javax.swing.JFrame {
         CountryLabel = new javax.swing.JTextField();
         DateOfBirthLabel = new javax.swing.JTextField();
         DateOfBirthField = new javax.swing.JTextField();
-        GenderLabel = new javax.swing.JTextField();
-        GenderBoolean = new java.awt.Choice();
         GetNewID = new javax.swing.JButton();
         MemberIDField = new javax.swing.JTextField();
         Background = new javax.swing.JLabel();
@@ -246,25 +244,6 @@ public class MemberInfo extends javax.swing.JFrame {
         getContentPane().add(DateOfBirthField);
         DateOfBirthField.setBounds(200, 210, 120, 20);
 
-        GenderLabel.setFont(new java.awt.Font("Trebuchet MS", 1, 12)); // NOI18N
-        GenderLabel.setForeground(new java.awt.Color(255, 255, 255));
-        GenderLabel.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
-        GenderLabel.setText("Gender");
-        GenderLabel.setBorder(null);
-        GenderLabel.setOpaque(false);
-        getContentPane().add(GenderLabel);
-        GenderLabel.setBounds(140, 230, 60, 20);
-
-        GenderBoolean.setBackground(new java.awt.Color(0, 0, 0));
-        GenderBoolean.setName(""); // NOI18N
-        GenderBoolean.addMouseWheelListener(new java.awt.event.MouseWheelListener() {
-            public void mouseWheelMoved(java.awt.event.MouseWheelEvent evt) {
-                GenderBooleanMouseWheelMoved(evt);
-            }
-        });
-        getContentPane().add(GenderBoolean);
-        GenderBoolean.setBounds(200, 230, 120, 22);
-
         GetNewID.setBackground(new java.awt.Color(0, 0, 0));
         GetNewID.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         GetNewID.setText("Get New Member ID");
@@ -323,12 +302,9 @@ public class MemberInfo extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_CityLabelActionPerformed
 
-    private void GenderBooleanMouseWheelMoved(java.awt.event.MouseWheelEvent evt) {//GEN-FIRST:event_GenderBooleanMouseWheelMoved
-        // TODO add your handling code here:
-    }//GEN-LAST:event_GenderBooleanMouseWheelMoved
-
     private void MemberIDFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MemberIDFieldActionPerformed
-        // TODO add your handling code here:
+
+                
     }//GEN-LAST:event_MemberIDFieldActionPerformed
                                            
 
@@ -390,8 +366,6 @@ public class MemberInfo extends javax.swing.JFrame {
     private javax.swing.JTextField EmailLabel;
     private javax.swing.JTextField FirstNameField;
     private javax.swing.JTextField FirstNameLabel;
-    private java.awt.Choice GenderBoolean;
-    private javax.swing.JTextField GenderLabel;
     private javax.swing.JButton GetNewID;
     private javax.swing.JTextField LastNameField;
     private javax.swing.JTextField LastNameLabel;
