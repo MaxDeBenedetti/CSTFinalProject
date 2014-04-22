@@ -31,10 +31,10 @@ public class Spa extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        DateOfService = new javax.swing.JLabel();
-        DateField = new javax.swing.JTextField();
-        TimeOfService = new javax.swing.JLabel();
-        TimeField = new javax.swing.JTextField();
+        MonthInput = new javax.swing.JTextField();
+        DayInput = new javax.swing.JTextField();
+        YearInput = new javax.swing.JTextField();
+        DateOfServiceField = new javax.swing.JLabel();
         TreatmentLabel = new javax.swing.JLabel();
         Facial = new javax.swing.JCheckBox();
         Haircut = new javax.swing.JCheckBox();
@@ -49,32 +49,52 @@ public class Spa extends javax.swing.JFrame {
         setResizable(false);
         getContentPane().setLayout(null);
 
-        DateOfService.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        DateOfService.setText("Date Of Service");
-        getContentPane().add(DateOfService);
-        DateOfService.setBounds(120, 10, 100, 20);
-
-        DateField.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        DateField.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        DateField.setOpaque(false);
-        DateField.addActionListener(new java.awt.event.ActionListener() {
+        MonthInput.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        MonthInput.setForeground(new java.awt.Color(0, 0, 0));
+        MonthInput.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        MonthInput.setText("MM");
+        MonthInput.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        MonthInput.setOpaque(false);
+        MonthInput.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                DateFieldActionPerformed(evt);
+                MonthInputActionPerformed(evt);
             }
         });
-        getContentPane().add(DateField);
-        DateField.setBounds(220, 10, 80, 20);
+        getContentPane().add(MonthInput);
+        MonthInput.setBounds(170, 10, 40, 20);
 
-        TimeOfService.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        TimeOfService.setText("Time Of Service");
-        getContentPane().add(TimeOfService);
-        TimeOfService.setBounds(120, 40, 100, 20);
+        DayInput.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        DayInput.setForeground(new java.awt.Color(0, 0, 0));
+        DayInput.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        DayInput.setText("DD");
+        DayInput.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        DayInput.setOpaque(false);
+        DayInput.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                DayInputActionPerformed(evt);
+            }
+        });
+        getContentPane().add(DayInput);
+        DayInput.setBounds(210, 10, 40, 20);
 
-        TimeField.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        TimeField.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        TimeField.setOpaque(false);
-        getContentPane().add(TimeField);
-        TimeField.setBounds(220, 40, 80, 20);
+        YearInput.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        YearInput.setForeground(new java.awt.Color(0, 0, 0));
+        YearInput.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        YearInput.setText("YYYY");
+        YearInput.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        YearInput.setOpaque(false);
+        YearInput.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                YearInputActionPerformed(evt);
+            }
+        });
+        getContentPane().add(YearInput);
+        YearInput.setBounds(250, 10, 40, 20);
+
+        DateOfServiceField.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        DateOfServiceField.setText("Date Of Service");
+        getContentPane().add(DateOfServiceField);
+        DateOfServiceField.setBounds(70, 10, 100, 20);
 
         TreatmentLabel.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         TreatmentLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
@@ -123,9 +143,17 @@ public class Spa extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void DateFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DateFieldActionPerformed
+    private void YearInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_YearInputActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_DateFieldActionPerformed
+    }//GEN-LAST:event_YearInputActionPerformed
+
+    private void DayInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DayInputActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_DayInputActionPerformed
+
+    private void MonthInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MonthInputActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_MonthInputActionPerformed
    {
       setBackground (Color.cyan);
       setPreferredSize (new Dimension(500,500));
@@ -166,15 +194,15 @@ public class Spa extends javax.swing.JFrame {
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Background;
-    private javax.swing.JTextField DateField;
-    private javax.swing.JLabel DateOfService;
+    private javax.swing.JLabel DateOfServiceField;
+    private javax.swing.JTextField DayInput;
     private javax.swing.JCheckBox Facial;
     private javax.swing.JCheckBox Haircut;
     private javax.swing.JCheckBox Massage;
+    private javax.swing.JTextField MonthInput;
     private javax.swing.JCheckBox Pedicure;
     private javax.swing.JButton ScheduleSession;
-    private javax.swing.JTextField TimeField;
-    private javax.swing.JLabel TimeOfService;
     private javax.swing.JLabel TreatmentLabel;
+    private javax.swing.JTextField YearInput;
     // End of variables declaration//GEN-END:variables
 }

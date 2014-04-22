@@ -30,17 +30,31 @@ public class Rooms extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        CheckInDate = new javax.swing.JLabel();
-        DateOfCheckIn = new javax.swing.JTextField();
-        CheckOutDate = new javax.swing.JLabel();
-        DateOfCheckOut = new javax.swing.JTextField();
-        RoomTypeLabel = new javax.swing.JLabel();
-        RoomList = new javax.swing.JScrollPane();
-        jList2 = new javax.swing.JList();
-        CheckAvailability = new javax.swing.JButton();
-        availableRooms = new javax.swing.JScrollPane();
-        jList1 = new javax.swing.JList();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTextPane1 = new javax.swing.JTextPane();
+        YourAccomidations = new javax.swing.JLabel();
+        CasinoNameInput = new javax.swing.JTextField();
+        AvailableLabel = new javax.swing.JLabel();
+        DoubleLabel = new javax.swing.JLabel();
+        DoubleInput = new javax.swing.JTextField();
+        QueenLabel = new javax.swing.JLabel();
+        QueenInput = new javax.swing.JTextField();
+        KingLabel = new javax.swing.JLabel();
+        KingInput = new javax.swing.JTextField();
+        textLine1 = new javax.swing.JLabel();
+        textLine2 = new javax.swing.JLabel();
+        textLine3 = new javax.swing.JLabel();
+        textLine4 = new javax.swing.JLabel();
+        textLine5 = new javax.swing.JLabel();
+        textLine6 = new javax.swing.JLabel();
+        textLine7 = new javax.swing.JLabel();
         Background = new javax.swing.JLabel();
+
+        jTextPane1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jTextPane1.setFont(new java.awt.Font("Tahoma", 2, 11)); // NOI18N
+        jTextPane1.setText("Your accomidations are a personal experience that celebrates your taste for the gracious, the elegant, the warmly welcoming comforts of hospitality. Your suite is the heart of the experience, offering double, queen, or king size beds outfitted with high quality sheets and down comforters. There are 316 non-smoking guest rooms and suites in Windsor Court. Each has its own character, emphasized by a the hotel's public and personal spaces. Freshly furnished and fitted with the amenities that matter most, from wet bars to WiFi, your room or suite accommodates you as only we can.");
+        jTextPane1.setOpaque(false);
+        jScrollPane1.setViewportView(jTextPane1);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setName("Rooms"); // NOI18N
@@ -48,76 +62,127 @@ public class Rooms extends javax.swing.JFrame {
         setResizable(false);
         getContentPane().setLayout(null);
 
-        CheckInDate.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        CheckInDate.setForeground(new java.awt.Color(255, 255, 255));
-        CheckInDate.setText("Check-In Date");
-        getContentPane().add(CheckInDate);
-        CheckInDate.setBounds(10, 150, 90, 20);
+        YourAccomidations.setFont(new java.awt.Font("Tahoma", 2, 18)); // NOI18N
+        YourAccomidations.setForeground(new java.awt.Color(255, 255, 255));
+        YourAccomidations.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        YourAccomidations.setText("Your accomidations at ");
+        getContentPane().add(YourAccomidations);
+        YourAccomidations.setBounds(20, 150, 200, 20);
 
-        DateOfCheckIn.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        DateOfCheckIn.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        DateOfCheckIn.setOpaque(false);
-        getContentPane().add(DateOfCheckIn);
-        DateOfCheckIn.setBounds(110, 150, 110, 30);
-
-        CheckOutDate.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        CheckOutDate.setForeground(new java.awt.Color(255, 255, 255));
-        CheckOutDate.setText("Check-Out Date");
-        getContentPane().add(CheckOutDate);
-        CheckOutDate.setBounds(3, 190, 97, 20);
-
-        DateOfCheckOut.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        DateOfCheckOut.setForeground(new java.awt.Color(255, 255, 255));
-        DateOfCheckOut.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        DateOfCheckOut.setOpaque(false);
-        getContentPane().add(DateOfCheckOut);
-        DateOfCheckOut.setBounds(110, 190, 110, 30);
-
-        RoomTypeLabel.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        RoomTypeLabel.setForeground(new java.awt.Color(255, 255, 255));
-        RoomTypeLabel.setText("Type of Room");
-        getContentPane().add(RoomTypeLabel);
-        RoomTypeLabel.setBounds(10, 230, 90, 20);
-
-        jList2.setBackground(new java.awt.Color(51, 0, 0));
-        jList2.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jList2.setForeground(new java.awt.Color(255, 255, 255));
-        jList2.setModel(new javax.swing.AbstractListModel() {
-            String[] strings = { "Double", "Queen", "King Studio" };
-            public int getSize() { return strings.length; }
-            public Object getElementAt(int i) { return strings[i]; }
-        });
-        jList2.setOpaque(false);
-        RoomList.setViewportView(jList2);
-
-        getContentPane().add(RoomList);
-        RoomList.setBounds(110, 230, 110, 30);
-
-        CheckAvailability.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        CheckAvailability.setText("Check Availability");
-        CheckAvailability.setOpaque(false);
-        CheckAvailability.addActionListener(new java.awt.event.ActionListener() {
+        CasinoNameInput.setFont(new java.awt.Font("Tahoma", 2, 18)); // NOI18N
+        CasinoNameInput.setForeground(new java.awt.Color(255, 255, 255));
+        CasinoNameInput.setHorizontalAlignment(javax.swing.JTextField.LEFT);
+        CasinoNameInput.setText("Casino Name");
+        CasinoNameInput.setBorder(null);
+        CasinoNameInput.setOpaque(false);
+        CasinoNameInput.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                CheckAvailabilityActionPerformed(evt);
+                CasinoNameInputActionPerformed(evt);
             }
         });
-        getContentPane().add(CheckAvailability);
-        CheckAvailability.setBounds(250, 150, 140, 23);
+        getContentPane().add(CasinoNameInput);
+        CasinoNameInput.setBounds(220, 150, 130, 20);
 
-        availableRooms.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        AvailableLabel.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        AvailableLabel.setForeground(new java.awt.Color(255, 255, 255));
+        AvailableLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        AvailableLabel.setText("Available at this time:");
+        getContentPane().add(AvailableLabel);
+        AvailableLabel.setBounds(10, 180, 140, 15);
 
-        jList1.setBackground(new java.awt.Color(51, 0, 0));
-        jList1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jList1.setForeground(new java.awt.Color(255, 255, 255));
-        jList1.setModel(new javax.swing.AbstractListModel() {
-            String[] strings = { "Item 1", "Item 2", "Item 3" };
-            public int getSize() { return strings.length; }
-            public Object getElementAt(int i) { return strings[i]; }
-        });
-        availableRooms.setViewportView(jList1);
+        DoubleLabel.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        DoubleLabel.setForeground(new java.awt.Color(255, 255, 255));
+        DoubleLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        DoubleLabel.setText("Double");
+        getContentPane().add(DoubleLabel);
+        DoubleLabel.setBounds(20, 200, 50, 15);
 
-        getContentPane().add(availableRooms);
-        availableRooms.setBounds(250, 180, 140, 60);
+        DoubleInput.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        DoubleInput.setForeground(new java.awt.Color(255, 255, 255));
+        DoubleInput.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        DoubleInput.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        DoubleInput.setOpaque(false);
+        getContentPane().add(DoubleInput);
+        DoubleInput.setBounds(82, 200, 60, 19);
+
+        QueenLabel.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        QueenLabel.setForeground(new java.awt.Color(255, 255, 255));
+        QueenLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        QueenLabel.setText("Queen");
+        getContentPane().add(QueenLabel);
+        QueenLabel.setBounds(20, 220, 50, 15);
+
+        QueenInput.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        QueenInput.setForeground(new java.awt.Color(255, 255, 255));
+        QueenInput.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        QueenInput.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        QueenInput.setOpaque(false);
+        getContentPane().add(QueenInput);
+        QueenInput.setBounds(82, 220, 60, 19);
+
+        KingLabel.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        KingLabel.setForeground(new java.awt.Color(255, 255, 255));
+        KingLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        KingLabel.setText("King");
+        getContentPane().add(KingLabel);
+        KingLabel.setBounds(20, 240, 50, 15);
+
+        KingInput.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        KingInput.setForeground(new java.awt.Color(255, 255, 255));
+        KingInput.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        KingInput.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        KingInput.setOpaque(false);
+        getContentPane().add(KingInput);
+        KingInput.setBounds(82, 240, 60, 19);
+
+        textLine1.setFont(new java.awt.Font("Tahoma", 3, 11)); // NOI18N
+        textLine1.setForeground(new java.awt.Color(255, 255, 255));
+        textLine1.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        textLine1.setText("is a personal experience that ");
+        getContentPane().add(textLine1);
+        textLine1.setBounds(160, 170, 230, 20);
+
+        textLine2.setFont(new java.awt.Font("Tahoma", 3, 11)); // NOI18N
+        textLine2.setForeground(new java.awt.Color(255, 255, 255));
+        textLine2.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        textLine2.setText("celebrates your taste for the gracious,");
+        getContentPane().add(textLine2);
+        textLine2.setBounds(160, 180, 230, 20);
+
+        textLine3.setFont(new java.awt.Font("Tahoma", 3, 11)); // NOI18N
+        textLine3.setForeground(new java.awt.Color(255, 255, 255));
+        textLine3.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        textLine3.setText("the elegant, and the comforts of home.");
+        getContentPane().add(textLine3);
+        textLine3.setBounds(160, 190, 220, 20);
+
+        textLine4.setFont(new java.awt.Font("Tahoma", 3, 11)); // NOI18N
+        textLine4.setForeground(new java.awt.Color(255, 255, 255));
+        textLine4.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        textLine4.setText("Each suite has its own character, offering");
+        getContentPane().add(textLine4);
+        textLine4.setBounds(160, 200, 240, 20);
+
+        textLine5.setFont(new java.awt.Font("Tahoma", 3, 12)); // NOI18N
+        textLine5.setForeground(new java.awt.Color(255, 255, 255));
+        textLine5.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        textLine5.setText("amenities that matter most. From ");
+        getContentPane().add(textLine5);
+        textLine5.setBounds(160, 210, 240, 20);
+
+        textLine6.setFont(new java.awt.Font("Tahoma", 3, 11)); // NOI18N
+        textLine6.setForeground(new java.awt.Color(255, 255, 255));
+        textLine6.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        textLine6.setText("to a freshly stocked bar, your room");
+        getContentPane().add(textLine6);
+        textLine6.setBounds(160, 220, 230, 20);
+
+        textLine7.setFont(new java.awt.Font("Tahoma", 3, 11)); // NOI18N
+        textLine7.setForeground(new java.awt.Color(255, 255, 255));
+        textLine7.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        textLine7.setText("offers all the comforts you need.");
+        getContentPane().add(textLine7);
+        textLine7.setBounds(160, 230, 220, 20);
 
         Background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Casino/hotel room resized.jpg"))); // NOI18N
         getContentPane().add(Background);
@@ -126,9 +191,9 @@ public class Rooms extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void CheckAvailabilityActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CheckAvailabilityActionPerformed
+    private void CasinoNameInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CasinoNameInputActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_CheckAvailabilityActionPerformed
+    }//GEN-LAST:event_CasinoNameInputActionPerformed
 
     /**
      * @param args the command line arguments
@@ -165,16 +230,24 @@ public class Rooms extends javax.swing.JFrame {
         });
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel AvailableLabel;
     private javax.swing.JLabel Background;
-    private javax.swing.JButton CheckAvailability;
-    private javax.swing.JLabel CheckInDate;
-    private javax.swing.JLabel CheckOutDate;
-    private javax.swing.JTextField DateOfCheckIn;
-    private javax.swing.JTextField DateOfCheckOut;
-    private javax.swing.JScrollPane RoomList;
-    private javax.swing.JLabel RoomTypeLabel;
-    private javax.swing.JScrollPane availableRooms;
-    private javax.swing.JList jList1;
-    private javax.swing.JList jList2;
+    private javax.swing.JTextField CasinoNameInput;
+    private javax.swing.JTextField DoubleInput;
+    private javax.swing.JLabel DoubleLabel;
+    private javax.swing.JTextField KingInput;
+    private javax.swing.JLabel KingLabel;
+    private javax.swing.JTextField QueenInput;
+    private javax.swing.JLabel QueenLabel;
+    private javax.swing.JLabel YourAccomidations;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTextPane jTextPane1;
+    private javax.swing.JLabel textLine1;
+    private javax.swing.JLabel textLine2;
+    private javax.swing.JLabel textLine3;
+    private javax.swing.JLabel textLine4;
+    private javax.swing.JLabel textLine5;
+    private javax.swing.JLabel textLine6;
+    private javax.swing.JLabel textLine7;
     // End of variables declaration//GEN-END:variables
 }

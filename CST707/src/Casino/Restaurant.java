@@ -28,18 +28,14 @@ public class Restaurant extends javax.swing.JFrame {
     private void initComponents() {
 
         BreakfastLabel = new javax.swing.JLabel();
-        Continental = new javax.swing.JCheckBox();
-        Cereal = new javax.swing.JCheckBox();
-        Waffles = new javax.swing.JCheckBox();
         LunchLabel = new javax.swing.JLabel();
-        Salad = new javax.swing.JCheckBox();
-        Pasta = new javax.swing.JCheckBox();
-        Burger = new javax.swing.JCheckBox();
         Dinner = new javax.swing.JLabel();
-        American = new javax.swing.JCheckBox();
-        Asian = new javax.swing.JCheckBox();
-        Coffee = new javax.swing.JCheckBox();
-        SubmitMenu = new javax.swing.JButton();
+        Appetizer = new javax.swing.JScrollPane();
+        jTextArea3 = new javax.swing.JTextArea();
+        Entree = new javax.swing.JScrollPane();
+        jTextArea1 = new javax.swing.JTextArea();
+        Desert = new javax.swing.JScrollPane();
+        jTextArea2 = new javax.swing.JTextArea();
         Background = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -54,87 +50,41 @@ public class Restaurant extends javax.swing.JFrame {
         getContentPane().add(BreakfastLabel);
         BreakfastLabel.setBounds(40, 10, 70, 30);
 
-        Continental.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        Continental.setForeground(new java.awt.Color(255, 255, 255));
-        Continental.setText("Tuscan Hummus");
-        Continental.setOpaque(false);
-        getContentPane().add(Continental);
-        Continental.setBounds(20, 30, 160, 25);
-
-        Cereal.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        Cereal.setForeground(new java.awt.Color(255, 255, 255));
-        Cereal.setText("Spinach Artichoke Dip");
-        Cereal.setOpaque(false);
-        getContentPane().add(Cereal);
-        Cereal.setBounds(20, 50, 160, 25);
-
-        Waffles.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        Waffles.setForeground(new java.awt.Color(255, 255, 255));
-        Waffles.setText("Lettuce Wraps");
-        Waffles.setOpaque(false);
-        getContentPane().add(Waffles);
-        Waffles.setBounds(20, 70, 110, 25);
-
         LunchLabel.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         LunchLabel.setForeground(new java.awt.Color(255, 255, 255));
         LunchLabel.setText("Entree");
         getContentPane().add(LunchLabel);
         LunchLabel.setBounds(100, 100, 60, 30);
 
-        Salad.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        Salad.setForeground(new java.awt.Color(255, 255, 255));
-        Salad.setText("Original BBQ Chicken");
-        Salad.setOpaque(false);
-        getContentPane().add(Salad);
-        Salad.setBounds(80, 120, 160, 25);
-
-        Pasta.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        Pasta.setForeground(new java.awt.Color(255, 255, 255));
-        Pasta.setText("Spicy Chipotle Chicken");
-        Pasta.setOpaque(false);
-        getContentPane().add(Pasta);
-        Pasta.setBounds(80, 140, 150, 25);
-
-        Burger.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        Burger.setForeground(new java.awt.Color(255, 255, 255));
-        Burger.setText("Thai Chicken");
-        Burger.setOpaque(false);
-        getContentPane().add(Burger);
-        Burger.setBounds(80, 160, 110, 25);
-
         Dinner.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         Dinner.setForeground(new java.awt.Color(255, 255, 255));
         Dinner.setText("Desert");
         getContentPane().add(Dinner);
-        Dinner.setBounds(150, 210, 60, 30);
+        Dinner.setBounds(150, 200, 60, 30);
 
-        American.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        American.setForeground(new java.awt.Color(255, 255, 255));
-        American.setText("Red Velvet Cake");
-        American.setOpaque(false);
-        getContentPane().add(American);
-        American.setBounds(120, 230, 130, 25);
+        jTextArea3.setColumns(20);
+        jTextArea3.setRows(5);
+        jTextArea3.setOpaque(false);
+        Appetizer.setViewportView(jTextArea3);
 
-        Asian.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        Asian.setForeground(new java.awt.Color(255, 255, 255));
-        Asian.setText("Tiramisu");
-        Asian.setOpaque(false);
-        getContentPane().add(Asian);
-        Asian.setBounds(120, 250, 110, 25);
+        getContentPane().add(Appetizer);
+        Appetizer.setBounds(10, 40, 190, 60);
 
-        Coffee.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        Coffee.setForeground(new java.awt.Color(255, 255, 255));
-        Coffee.setText("Wild Mushroom");
-        Coffee.setOpaque(false);
-        getContentPane().add(Coffee);
-        Coffee.setBounds(80, 180, 130, 25);
+        jTextArea1.setColumns(20);
+        jTextArea1.setRows(5);
+        jTextArea1.setOpaque(false);
+        Entree.setViewportView(jTextArea1);
 
-        SubmitMenu.setBackground(new java.awt.Color(255, 255, 255));
-        SubmitMenu.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        SubmitMenu.setText("Submit Order");
-        SubmitMenu.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        getContentPane().add(SubmitMenu);
-        SubmitMenu.setBounds(210, 260, 130, 25);
+        getContentPane().add(Entree);
+        Entree.setBounds(70, 130, 190, 60);
+
+        jTextArea2.setColumns(20);
+        jTextArea2.setRows(5);
+        jTextArea2.setOpaque(false);
+        Desert.setViewportView(jTextArea2);
+
+        getContentPane().add(Desert);
+        Desert.setBounds(130, 230, 190, 60);
 
         Background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Casino/wine3Resized.jpg"))); // NOI18N
         getContentPane().add(Background);
@@ -178,19 +128,15 @@ public class Restaurant extends javax.swing.JFrame {
         });
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JCheckBox American;
-    private javax.swing.JCheckBox Asian;
+    private javax.swing.JScrollPane Appetizer;
     private javax.swing.JLabel Background;
     private javax.swing.JLabel BreakfastLabel;
-    private javax.swing.JCheckBox Burger;
-    private javax.swing.JCheckBox Cereal;
-    private javax.swing.JCheckBox Coffee;
-    private javax.swing.JCheckBox Continental;
+    private javax.swing.JScrollPane Desert;
     private javax.swing.JLabel Dinner;
+    private javax.swing.JScrollPane Entree;
     private javax.swing.JLabel LunchLabel;
-    private javax.swing.JCheckBox Pasta;
-    private javax.swing.JCheckBox Salad;
-    private javax.swing.JButton SubmitMenu;
-    private javax.swing.JCheckBox Waffles;
+    private javax.swing.JTextArea jTextArea1;
+    private javax.swing.JTextArea jTextArea2;
+    private javax.swing.JTextArea jTextArea3;
     // End of variables declaration//GEN-END:variables
 }

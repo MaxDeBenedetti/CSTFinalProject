@@ -45,7 +45,9 @@ public class MemberInfo extends javax.swing.JFrame {
         CountryField = new javax.swing.JTextField();
         CountryLabel = new javax.swing.JTextField();
         DateOfBirthLabel = new javax.swing.JTextField();
-        DateOfBirthField = new javax.swing.JTextField();
+        MonthInput = new javax.swing.JTextField();
+        DayInput = new javax.swing.JTextField();
+        YearInput = new javax.swing.JTextField();
         GetNewID = new javax.swing.JButton();
         MemberIDField = new javax.swing.JTextField();
         Background = new javax.swing.JLabel();
@@ -236,13 +238,32 @@ public class MemberInfo extends javax.swing.JFrame {
         getContentPane().add(DateOfBirthLabel);
         DateOfBirthLabel.setBounds(120, 210, 80, 20);
 
-        DateOfBirthField.setFont(new java.awt.Font("Trebuchet MS", 1, 12)); // NOI18N
-        DateOfBirthField.setForeground(new java.awt.Color(153, 153, 153));
-        DateOfBirthField.setHorizontalAlignment(javax.swing.JTextField.LEFT);
-        DateOfBirthField.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        DateOfBirthField.setOpaque(false);
-        getContentPane().add(DateOfBirthField);
-        DateOfBirthField.setBounds(200, 210, 120, 20);
+        MonthInput.setFont(new java.awt.Font("Trebuchet MS", 1, 12)); // NOI18N
+        MonthInput.setForeground(new java.awt.Color(255, 255, 255));
+        MonthInput.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        MonthInput.setText("MM");
+        MonthInput.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        MonthInput.setOpaque(false);
+        getContentPane().add(MonthInput);
+        MonthInput.setBounds(200, 210, 50, 20);
+
+        DayInput.setFont(new java.awt.Font("Trebuchet MS", 1, 12)); // NOI18N
+        DayInput.setForeground(new java.awt.Color(255, 255, 255));
+        DayInput.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        DayInput.setText("DD");
+        DayInput.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        DayInput.setOpaque(false);
+        getContentPane().add(DayInput);
+        DayInput.setBounds(250, 210, 50, 20);
+
+        YearInput.setFont(new java.awt.Font("Trebuchet MS", 1, 12)); // NOI18N
+        YearInput.setForeground(new java.awt.Color(255, 255, 255));
+        YearInput.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        YearInput.setText("YYYY");
+        YearInput.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        YearInput.setOpaque(false);
+        getContentPane().add(YearInput);
+        YearInput.setBounds(300, 210, 50, 20);
 
         GetNewID.setBackground(new java.awt.Color(0, 0, 0));
         GetNewID.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
@@ -361,8 +382,8 @@ public class MemberInfo extends javax.swing.JFrame {
     private javax.swing.JTextField CityLabel;
     private javax.swing.JTextField CountryField;
     private javax.swing.JTextField CountryLabel;
-    private javax.swing.JTextField DateOfBirthField;
     private javax.swing.JTextField DateOfBirthLabel;
+    private javax.swing.JTextField DayInput;
     private javax.swing.JTextField EmailField;
     private javax.swing.JTextField EmailLabel;
     private javax.swing.JTextField FirstNameField;
@@ -371,12 +392,14 @@ public class MemberInfo extends javax.swing.JFrame {
     private javax.swing.JTextField LastNameField;
     private javax.swing.JTextField LastNameLabel;
     private javax.swing.JTextField MemberIDField;
+    private javax.swing.JTextField MonthInput;
     private javax.swing.JTextField PhoneField;
     private javax.swing.JTextField PhoneLabel;
     private javax.swing.JTextField StateField;
     private javax.swing.JTextField StateLabel;
     private javax.swing.JTextField StreetLabel;
     private javax.swing.JTextField StreetNameField;
+    private javax.swing.JTextField YearInput;
     private javax.swing.JTextField ZipCodeField;
     private javax.swing.JTextField ZipCodeLabel;
     private org.jdesktop.beansbinding.BindingGroup bindingGroup;

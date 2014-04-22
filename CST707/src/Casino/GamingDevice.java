@@ -43,7 +43,7 @@ public class GamingDevice extends javax.swing.JFrame {
         getContentPane().add(InfoLabel);
         InfoLabel.setBounds(10, 20, 370, 40);
 
-        textArea2.setBackground(new java.awt.Color(153, 153, 255));
+        textArea2.setBackground(new java.awt.Color(169, 203, 230));
         textArea2.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
         textArea2.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         getContentPane().add(textArea2);
