@@ -5,7 +5,7 @@
 package Casino;
 
 /**
- * The user can select the Member's preferred gaming device.
+ * A text area that displays the gaming devices at a given casino
  * 
  * The Member name, Casino, and Member Level are prefilled from the Menu page.
  */
@@ -15,6 +15,8 @@ public class GamingDevice extends javax.swing.JFrame {
      */
     public GamingDevice() {
         initComponents();
+        //Count the number of gaming devices the casino has grouped by type
+        //Select distinct DeviceTypeID, count(*) from gamingdevices where CasinoID = CasinoID group by DeviceTypeID
     }
 
     /**
@@ -26,13 +28,8 @@ public class GamingDevice extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        Roulette = new javax.swing.JCheckBox();
-        PokerLowStakes = new javax.swing.JCheckBox();
-        PokerMediumStakes = new javax.swing.JCheckBox();
-        PokerHighStakes = new javax.swing.JCheckBox();
-        OneDollarSlot = new javax.swing.JCheckBox();
-        QuarterSlot = new javax.swing.JCheckBox();
-        FortuneWheel = new javax.swing.JCheckBox();
+        InfoLabel = new javax.swing.JLabel();
+        textArea2 = new java.awt.TextArea();
         Background = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -41,52 +38,16 @@ public class GamingDevice extends javax.swing.JFrame {
         setResizable(false);
         getContentPane().setLayout(null);
 
-        Roulette.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        Roulette.setText("Roulette");
-        Roulette.setOpaque(false);
-        getContentPane().add(Roulette);
-        Roulette.setBounds(10, 30, 220, 25);
+        InfoLabel.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        InfoLabel.setText("The gaming devices available at your destination casino are:");
+        getContentPane().add(InfoLabel);
+        InfoLabel.setBounds(10, 20, 370, 40);
 
-        PokerLowStakes.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        PokerLowStakes.setText("Poker Low Stakes");
-        PokerLowStakes.setOpaque(false);
-        getContentPane().add(PokerLowStakes);
-        PokerLowStakes.setBounds(30, 40, 180, 40);
-
-        PokerMediumStakes.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        PokerMediumStakes.setText("Poker Medium Stakes");
-        PokerMediumStakes.setOpaque(false);
-        getContentPane().add(PokerMediumStakes);
-        PokerMediumStakes.setBounds(50, 70, 180, 25);
-
-        PokerHighStakes.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        PokerHighStakes.setText("Poker High Stakes");
-        PokerHighStakes.setOpaque(false);
-        getContentPane().add(PokerHighStakes);
-        PokerHighStakes.setBounds(70, 90, 150, 25);
-
-        OneDollarSlot.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        OneDollarSlot.setText("One Dollar Slot");
-        OneDollarSlot.setOpaque(false);
-        OneDollarSlot.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                OneDollarSlotActionPerformed(evt);
-            }
-        });
-        getContentPane().add(OneDollarSlot);
-        OneDollarSlot.setBounds(90, 110, 290, 25);
-
-        QuarterSlot.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        QuarterSlot.setText("Quarter Slot");
-        QuarterSlot.setOpaque(false);
-        getContentPane().add(QuarterSlot);
-        QuarterSlot.setBounds(110, 130, 220, 25);
-
-        FortuneWheel.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        FortuneWheel.setText("Wheel of Fortune");
-        FortuneWheel.setOpaque(false);
-        getContentPane().add(FortuneWheel);
-        FortuneWheel.setBounds(130, 150, 220, 25);
+        textArea2.setBackground(new java.awt.Color(153, 153, 255));
+        textArea2.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        textArea2.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        getContentPane().add(textArea2);
+        textArea2.setBounds(20, 60, 350, 100);
 
         Background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Casino/gambling-dice.jpg"))); // NOI18N
         getContentPane().add(Background);
@@ -94,10 +55,6 @@ public class GamingDevice extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void OneDollarSlotActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_OneDollarSlotActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_OneDollarSlotActionPerformed
 
     /**
      * @param args the command line arguments
@@ -130,12 +87,7 @@ public class GamingDevice extends javax.swing.JFrame {
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Background;
-    private javax.swing.JCheckBox FortuneWheel;
-    private javax.swing.JCheckBox OneDollarSlot;
-    private javax.swing.JCheckBox PokerHighStakes;
-    private javax.swing.JCheckBox PokerLowStakes;
-    private javax.swing.JCheckBox PokerMediumStakes;
-    private javax.swing.JCheckBox QuarterSlot;
-    private javax.swing.JCheckBox Roulette;
+    private javax.swing.JLabel InfoLabel;
+    private java.awt.TextArea textArea2;
     // End of variables declaration//GEN-END:variables
 }

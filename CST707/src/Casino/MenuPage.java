@@ -20,6 +20,8 @@ package Casino;
 public class MenuPage extends javax.swing.JFrame {
     
     private Connector conn;
+    private String casinoID;//accepts the value of the selected casino
+    private String memberID;//accepts the value of the selected member
     public MenuPage(Connector con){
         conn = con;
         initComponents();
@@ -72,6 +74,11 @@ public class MenuPage extends javax.swing.JFrame {
         NewMemberBox.setForeground(new java.awt.Color(255, 255, 255));
         NewMemberBox.setText("New Member");
         NewMemberBox.setOpaque(false);
+        NewMemberBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                NewMemberBoxActionPerformed(evt);
+            }
+        });
         getContentPane().add(NewMemberBox);
         NewMemberBox.setBounds(10, 0, 110, 25);
 
@@ -133,6 +140,11 @@ public class MenuPage extends javax.swing.JFrame {
             String[] strings = { "Orbit", "Rost Petals", "Horse Shoe", "Oasis", "Forum" };
             public int getSize() { return strings.length; }
             public Object getElementAt(int i) { return strings[i]; }
+        });
+        CasinoName.addListSelectionListener(new javax.swing.event.ListSelectionListener() {
+            public void valueChanged(javax.swing.event.ListSelectionEvent evt) {
+                CasinoNameValueChanged(evt);
+            }
         });
         CasinoScrollPanel.setViewportView(CasinoName);
 
@@ -216,6 +228,15 @@ public class MenuPage extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void NewMemberBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NewMemberBoxActionPerformed
+        //Opens the MemberInfo so that we can add a new member
+        
+    }//GEN-LAST:event_NewMemberBoxActionPerformed
+
+    private void CasinoNameValueChanged(javax.swing.event.ListSelectionEvent evt) {//GEN-FIRST:event_CasinoNameValueChanged
+        // Set the casinoID and fill in the stuff at the bottom.
+    }//GEN-LAST:event_CasinoNameValueChanged
 
     /**
      * @param args the command line arguments

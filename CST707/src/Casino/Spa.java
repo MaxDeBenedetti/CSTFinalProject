@@ -40,6 +40,7 @@ public class Spa extends javax.swing.JFrame {
         Haircut = new javax.swing.JCheckBox();
         Massage = new javax.swing.JCheckBox();
         Pedicure = new javax.swing.JCheckBox();
+        ScheduleSession = new javax.swing.JButton();
         Background = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -106,6 +107,15 @@ public class Spa extends javax.swing.JFrame {
         getContentPane().add(Pedicure);
         Pedicure.setBounds(110, 130, 110, 25);
 
+        ScheduleSession.setBackground(new java.awt.Color(0, 0, 0));
+        ScheduleSession.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        ScheduleSession.setForeground(new java.awt.Color(0, 0, 0));
+        ScheduleSession.setText("Schedule Session");
+        ScheduleSession.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        ScheduleSession.setOpaque(false);
+        getContentPane().add(ScheduleSession);
+        ScheduleSession.setBounds(40, 190, 150, 30);
+
         Background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Casino/spa4resized.jpg"))); // NOI18N
         getContentPane().add(Background);
         Background.setBounds(0, 0, 400, 230);
@@ -162,6 +172,7 @@ public class Spa extends javax.swing.JFrame {
     private javax.swing.JCheckBox Haircut;
     private javax.swing.JCheckBox Massage;
     private javax.swing.JCheckBox Pedicure;
+    private javax.swing.JButton ScheduleSession;
     private javax.swing.JTextField TimeField;
     private javax.swing.JLabel TimeOfService;
     private javax.swing.JLabel TreatmentLabel;

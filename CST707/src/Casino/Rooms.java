@@ -38,8 +38,9 @@ public class Rooms extends javax.swing.JFrame {
         RoomList = new javax.swing.JScrollPane();
         jList2 = new javax.swing.JList();
         CheckAvailability = new javax.swing.JButton();
-        AvailableYesNo = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
+        availableRooms = new javax.swing.JScrollPane();
+        jList1 = new javax.swing.JList();
+        Background = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setName("Rooms"); // NOI18N
@@ -103,15 +104,24 @@ public class Rooms extends javax.swing.JFrame {
         getContentPane().add(CheckAvailability);
         CheckAvailability.setBounds(250, 150, 140, 23);
 
-        AvailableYesNo.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        AvailableYesNo.setForeground(new java.awt.Color(255, 255, 255));
-        AvailableYesNo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        getContentPane().add(AvailableYesNo);
-        AvailableYesNo.setBounds(250, 180, 140, 20);
+        availableRooms.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Casino/hotel room resized.jpg"))); // NOI18N
-        getContentPane().add(jLabel1);
-        jLabel1.setBounds(0, 0, 400, 310);
+        jList1.setBackground(new java.awt.Color(51, 0, 0));
+        jList1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jList1.setForeground(new java.awt.Color(255, 255, 255));
+        jList1.setModel(new javax.swing.AbstractListModel() {
+            String[] strings = { "Item 1", "Item 2", "Item 3" };
+            public int getSize() { return strings.length; }
+            public Object getElementAt(int i) { return strings[i]; }
+        });
+        availableRooms.setViewportView(jList1);
+
+        getContentPane().add(availableRooms);
+        availableRooms.setBounds(250, 180, 140, 60);
+
+        Background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Casino/hotel room resized.jpg"))); // NOI18N
+        getContentPane().add(Background);
+        Background.setBounds(0, 0, 400, 310);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -155,7 +165,7 @@ public class Rooms extends javax.swing.JFrame {
         });
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel AvailableYesNo;
+    private javax.swing.JLabel Background;
     private javax.swing.JButton CheckAvailability;
     private javax.swing.JLabel CheckInDate;
     private javax.swing.JLabel CheckOutDate;
@@ -163,7 +173,8 @@ public class Rooms extends javax.swing.JFrame {
     private javax.swing.JTextField DateOfCheckOut;
     private javax.swing.JScrollPane RoomList;
     private javax.swing.JLabel RoomTypeLabel;
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JScrollPane availableRooms;
+    private javax.swing.JList jList1;
     private javax.swing.JList jList2;
     // End of variables declaration//GEN-END:variables
 }

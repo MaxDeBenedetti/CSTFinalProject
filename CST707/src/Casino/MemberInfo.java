@@ -313,7 +313,8 @@ public class MemberInfo extends javax.swing.JFrame {
     }//GEN-LAST:event_getNumber
 
     private void RandomNumber(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RandomNumber
-       Random ID = new Random();
+        //Insert a new member and generate their memberID
+        Random ID = new Random();
         int number;
         for (int counter=1000;counter<=1000;counter++)
         {

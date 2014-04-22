@@ -39,6 +39,7 @@ public class Restaurant extends javax.swing.JFrame {
         American = new javax.swing.JCheckBox();
         Asian = new javax.swing.JCheckBox();
         Coffee = new javax.swing.JCheckBox();
+        SubmitMenu = new javax.swing.JButton();
         Background = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -128,6 +129,13 @@ public class Restaurant extends javax.swing.JFrame {
         getContentPane().add(Coffee);
         Coffee.setBounds(80, 180, 130, 25);
 
+        SubmitMenu.setBackground(new java.awt.Color(255, 255, 255));
+        SubmitMenu.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        SubmitMenu.setText("Submit Order");
+        SubmitMenu.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        getContentPane().add(SubmitMenu);
+        SubmitMenu.setBounds(210, 260, 130, 25);
+
         Background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Casino/wine3Resized.jpg"))); // NOI18N
         getContentPane().add(Background);
         Background.setBounds(0, 0, 440, 300);
@@ -182,6 +190,7 @@ public class Restaurant extends javax.swing.JFrame {
     private javax.swing.JLabel LunchLabel;
     private javax.swing.JCheckBox Pasta;
     private javax.swing.JCheckBox Salad;
+    private javax.swing.JButton SubmitMenu;
     private javax.swing.JCheckBox Waffles;
     // End of variables declaration//GEN-END:variables
 }
