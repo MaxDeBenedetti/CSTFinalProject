@@ -6,6 +6,7 @@ package Casino;
 
 import java.awt.Color;
 import java.awt.Dimension;
+import java.util.Date;
 import javax.swing.JFrame;
 
 /**
@@ -16,6 +17,14 @@ import javax.swing.JFrame;
  */
 public class Spa extends javax.swing.JFrame {
 
+    Connector conn;
+    Integer memID;
+    
+    public Spa(Connector con, int memberID){
+        conn = con;
+        memID = memberID;
+        initComponents();
+    }
     /**
      */
     public Spa() {
@@ -133,6 +142,11 @@ public class Spa extends javax.swing.JFrame {
         ScheduleSession.setText("Schedule Session");
         ScheduleSession.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         ScheduleSession.setOpaque(false);
+        ScheduleSession.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ScheduleSessionActionPerformed(evt);
+            }
+        });
         getContentPane().add(ScheduleSession);
         ScheduleSession.setBounds(40, 190, 150, 30);
 
@@ -154,6 +168,32 @@ public class Spa extends javax.swing.JFrame {
     private void MonthInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MonthInputActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_MonthInputActionPerformed
+
+    private void ScheduleSessionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ScheduleSessionActionPerformed
+        // TODO add your handling code here:
+        if(memID != null){
+            int day, month, year;
+            Boolean facial, haircut, massage,pedicure;
+
+            try{
+                day = Integer.parseInt(DayInput.getText());
+                month = Integer.parseInt(MonthInput.getText());
+                year = Integer.parseInt(YearInput.getText());
+
+                facial = Facial.isSelected();
+                haircut = Haircut.isSelected();
+                massage = Massage.isSelected();
+                pedicure = Pedicure.isSelected();
+
+                Date date = new Date(year, month, day);
+
+                String query = "";
+            }
+            catch(java.lang.NumberFormatException nfe){
+
+            }
+        }
+    }//GEN-LAST:event_ScheduleSessionActionPerformed
    {
       setBackground (Color.cyan);
       setPreferredSize (new Dimension(500,500));

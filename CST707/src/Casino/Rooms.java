@@ -20,9 +20,10 @@ import java.util.logging.Logger;
 public class Rooms extends javax.swing.JFrame {
     
     private Connector conn;
-    private String casinoID, casinoName;
+    private String casinoName;
+    int casinoID;
     int doublE, king, queen;
-    public Rooms(Connector con, String casID, String casNam){
+    public Rooms(Connector con, int casID, String casNam){
         conn = con;
         casinoID = casID;
         casinoName = casNam;

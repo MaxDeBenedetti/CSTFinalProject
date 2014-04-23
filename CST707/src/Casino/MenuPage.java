@@ -23,7 +23,7 @@ import javax.swing.WindowConstants;
 public class MenuPage extends javax.swing.JFrame {
     
     private Connector conn;
-    private String casinoID = "1";//accepts the value of the selected casino
+    private int casinoID = 1;//accepts the value of the selected casino
     private String casinoName = "haha";
     private String memberID;//accepts the value of the selected member
     public MenuPage(Connector con){
