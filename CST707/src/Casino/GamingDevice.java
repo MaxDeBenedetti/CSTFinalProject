@@ -4,6 +4,11 @@
  */
 package Casino;
 
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 /**
  * A text area that displays the gaming devices at a given casino
  * 
@@ -11,6 +16,31 @@ package Casino;
  */
 public class GamingDevice extends javax.swing.JFrame {
 
+    Connector conn;
+    int casID;
+    public GamingDevice(Connector con, int casinoID){
+        conn = con;
+        casID = casinoID;
+        initComponents();
+        
+        String query = "sselect distinct dt.DEVICENAME, COUNT(*)\n" +
+        "from DEVICETYPE as dt \n" +
+        "	join GAMBLINGDEVICE as gd\n" +
+        "	on dt.DEVICETYPEID = gd.DeviceID\n" +
+        "	where gd.CASINOID = "+casID+"\n" +
+        "group by dt.DEVICENAME";
+        
+        String devices ="";
+        try {
+            ResultSet rs = conn.execQuery(query);
+            while(rs.next()){
+                devices += rs.getString(1)+":   "+rs.getInt(2)+"\n";
+            }
+            textArea2.setText(devices);
+        } catch (SQLException ex) {
+            System.err.println(ex.getMessage());
+        }
+    }
     /**
      */
     public GamingDevice() {

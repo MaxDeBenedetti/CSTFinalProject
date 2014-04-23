@@ -202,6 +202,11 @@ public class MenuPage extends javax.swing.JFrame {
         jButton1.setForeground(new java.awt.Color(0, 0, 0));
         jButton1.setText("New Member");
         jButton1.setOpaque(false);
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
         getContentPane().add(jButton1);
         jButton1.setBounds(100, 10, 160, 20);
 
@@ -256,6 +261,11 @@ public class MenuPage extends javax.swing.JFrame {
         rf.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         rf.setVisible(true);
     }//GEN-LAST:event_RoomsMouseClicked
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
