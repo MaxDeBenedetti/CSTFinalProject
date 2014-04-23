@@ -3,17 +3,23 @@
  * and open the template in the editor.
  */
 package Casino;
+import java.util.Random;
 
 /**
- *
- * @author hillman
+ * 
  */
-public class MemberInfo extends javax.swing.JFrame {
+public class MemberInfoOld extends javax.swing.JFrame {
 
+    
+    private Connector conn;
+    
+    public MemberInfoOld(Connector con){
+        conn = con;
+        initComponents();
+    }
     /**
-     * Creates new form MemberInfo
      */
-    public MemberInfo() {
+    public MemberInfoOld() {
         initComponents();
     }
 
@@ -25,6 +31,7 @@ public class MemberInfo extends javax.swing.JFrame {
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
+        bindingGroup = new org.jdesktop.beansbinding.BindingGroup();
 
         FirstNameLabel = new javax.swing.JTextField();
         FirstNameField = new javax.swing.JTextField();
@@ -48,12 +55,12 @@ public class MemberInfo extends javax.swing.JFrame {
         MonthInput = new javax.swing.JTextField();
         DayInput = new javax.swing.JTextField();
         YearInput = new javax.swing.JTextField();
-        MemberIDField = new javax.swing.JTextField();
-        MemberIDButton = new javax.swing.JButton();
         Background = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(425, 475));
+        setMinimumSize(new java.awt.Dimension(415, 460));
+        setName("MemberInfo"); // NOI18N
+        setResizable(false);
         getContentPane().setLayout(null);
 
         FirstNameLabel.setFont(new java.awt.Font("Trebuchet MS", 1, 12)); // NOI18N
@@ -262,25 +269,19 @@ public class MemberInfo extends javax.swing.JFrame {
         getContentPane().add(YearInput);
         YearInput.setBounds(300, 210, 50, 20);
 
-        MemberIDField.setFont(new java.awt.Font("Trebuchet MS", 1, 12)); // NOI18N
-        MemberIDField.setForeground(new java.awt.Color(153, 153, 153));
-        MemberIDField.setHorizontalAlignment(javax.swing.JTextField.LEFT);
-        MemberIDField.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        MemberIDField.setOpaque(false);
-        getContentPane().add(MemberIDField);
-        MemberIDField.setBounds(230, 310, 160, 20);
-
-        MemberIDButton.setBackground(new java.awt.Color(0, 0, 0));
-        MemberIDButton.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        MemberIDButton.setText("Get New Member ID");
-        getContentPane().add(MemberIDButton);
-        MemberIDButton.setBounds(230, 280, 160, 23);
-
         Background.setForeground(new java.awt.Color(204, 204, 204));
         Background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Casino/cards black edited.jpg"))); // NOI18N
         Background.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+
+        org.jdesktop.beansbinding.Binding binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, Background, org.jdesktop.beansbinding.ObjectProperty.create(), Background, org.jdesktop.beansbinding.BeanProperty.create("horizontalAlignment"));
+        bindingGroup.addBinding(binding);
+        binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, Background, org.jdesktop.beansbinding.ObjectProperty.create(), Background, org.jdesktop.beansbinding.BeanProperty.create("verticalAlignment"));
+        bindingGroup.addBinding(binding);
+
         getContentPane().add(Background);
         Background.setBounds(0, 0, 410, 452);
+
+        bindingGroup.bind();
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -289,15 +290,15 @@ public class MemberInfo extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_StreetLabelActionPerformed
 
-    private void CityLabelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CityLabelActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_CityLabelActionPerformed
-
     private void StateLabelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_StateLabelActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_StateLabelActionPerformed
 
-    /**
+    private void CityLabelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CityLabelActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_CityLabelActionPerformed
+                                           
+     /*
      * @param args the command line arguments
      */
     public static void main(String args[]) {
@@ -313,22 +314,18 @@ public class MemberInfo extends javax.swing.JFrame {
                     break;
                 }
             }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(MemberInfo.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(MemberInfo.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(MemberInfo.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(MemberInfo.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | javax.swing.UnsupportedLookAndFeelException ex) {
+            java.util.logging.Logger.getLogger(MemberInfoOld.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
+            @Override
             public void run() {
-                new MemberInfo().setVisible(true);
+                new MemberInfoOld().setVisible(true);
             }
+            
         });
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -345,8 +342,6 @@ public class MemberInfo extends javax.swing.JFrame {
     private javax.swing.JTextField FirstNameLabel;
     private javax.swing.JTextField LastNameField;
     private javax.swing.JTextField LastNameLabel;
-    private javax.swing.JButton MemberIDButton;
-    private javax.swing.JTextField MemberIDField;
     private javax.swing.JTextField MonthInput;
     private javax.swing.JTextField PhoneField;
     private javax.swing.JTextField PhoneLabel;
@@ -357,5 +352,6 @@ public class MemberInfo extends javax.swing.JFrame {
     private javax.swing.JTextField YearInput;
     private javax.swing.JTextField ZipCodeField;
     private javax.swing.JTextField ZipCodeLabel;
+    private org.jdesktop.beansbinding.BindingGroup bindingGroup;
     // End of variables declaration//GEN-END:variables
 }

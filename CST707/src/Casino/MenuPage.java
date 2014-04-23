@@ -244,7 +244,7 @@ public class MenuPage extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void NewMemberBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NewMemberBoxActionPerformed
-        //Opens the MemberInfo so that we can add a new member
+        //Opens the MemberInfoOld so that we can add a new member
         
     }//GEN-LAST:event_NewMemberBoxActionPerformed
 
@@ -254,7 +254,7 @@ public class MenuPage extends javax.swing.JFrame {
 
     private void MemberMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_MemberMouseClicked
         // TODO add your handling code here:
-        MemberInfo mif = new MemberInfo(conn);
+        MemberInfoOld mif = new MemberInfoOld(conn);
         mif.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         mif.setVisible(true);
     }//GEN-LAST:event_MemberMouseClicked
