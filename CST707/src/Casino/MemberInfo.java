@@ -10,6 +10,13 @@ import java.util.Random;
  */
 public class MemberInfo extends javax.swing.JFrame {
 
+    
+    private Connector conn;
+    
+    public MemberInfo(Connector con){
+        conn = con;
+        initComponents();
+    }
     /**
      */
     public MemberInfo() {

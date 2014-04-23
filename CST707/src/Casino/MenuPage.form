@@ -8,11 +8,17 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="Member"/>
           </Properties>
+          <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="MemberMouseClicked"/>
+          </Events>
         </Menu>
         <Menu class="javax.swing.JMenu" name="Rooms">
           <Properties>
             <Property name="text" type="java.lang.String" value="Rooms"/>
           </Properties>
+          <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="RoomsMouseClicked"/>
+          </Events>
         </Menu>
         <Menu class="javax.swing.JMenu" name="Restaurant">
           <Properties>

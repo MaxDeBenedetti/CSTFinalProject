@@ -1,6 +1,9 @@
 
 package Casino;
 
+import javax.swing.JFrame;
+import javax.swing.WindowConstants;
+
 /**
  *First page of the casino user interface.
  * If the client is a new member, the user checks the box labeled New Member 
@@ -20,7 +23,8 @@ package Casino;
 public class MenuPage extends javax.swing.JFrame {
     
     private Connector conn;
-    private String casinoID;//accepts the value of the selected casino
+    private String casinoID = "1";//accepts the value of the selected casino
+    private String casinoName = "haha";
     private String memberID;//accepts the value of the selected member
     public MenuPage(Connector con){
         conn = con;
@@ -210,9 +214,19 @@ public class MenuPage extends javax.swing.JFrame {
         Background.setBounds(0, 0, 448, 251);
 
         Member.setText("Member");
+        Member.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                MemberMouseClicked(evt);
+            }
+        });
         Menu.add(Member);
 
         Rooms.setText("Rooms");
+        Rooms.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                RoomsMouseClicked(evt);
+            }
+        });
         Menu.add(Rooms);
 
         Restaurant.setText("Restaurant");
@@ -237,6 +251,20 @@ public class MenuPage extends javax.swing.JFrame {
     private void CasinoNameValueChanged(javax.swing.event.ListSelectionEvent evt) {//GEN-FIRST:event_CasinoNameValueChanged
         // Set the casinoID and fill in the stuff at the bottom.
     }//GEN-LAST:event_CasinoNameValueChanged
+
+    private void MemberMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_MemberMouseClicked
+        // TODO add your handling code here:
+        MemberInfo mif = new MemberInfo(conn);
+        mif.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        mif.setVisible(true);
+    }//GEN-LAST:event_MemberMouseClicked
+
+    private void RoomsMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_RoomsMouseClicked
+        // TODO add your handling code here:
+        Rooms rf = new Rooms(conn, casinoID, casinoName);
+        rf.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        rf.setVisible(true);
+    }//GEN-LAST:event_RoomsMouseClicked
 
     /**
      * @param args the command line arguments

@@ -4,6 +4,11 @@
  */
 package Casino;
 
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 /**
  * The user can input a check-in date, a check-out date, type of room and press
  * the Check Availability button.  Once the button is activated, either the 
@@ -13,6 +18,55 @@ package Casino;
  * 
  */
 public class Rooms extends javax.swing.JFrame {
+    
+    private Connector conn;
+    private String casinoID, casinoName;
+    int doublE, king, queen;
+    public Rooms(Connector con, String casID, String casNam){
+        conn = con;
+        casinoID = casID;
+        casinoName = casNam;
+        initComponents();
+        
+        CasinoNameInput.setText(casinoName);
+        
+        String query1 = "select count(*) from ROOM where CASINOID="+casinoID+" and ROOMTYPE='Double' ";
+        String query2 = "select count(*) from ROOM where CASINOID="+casinoID+" and ROOMTYPE='King' ";
+        String query3 = "select count(*) from ROOM where CASINOID="+casinoID+" and ROOMTYPE='Queen' ";
+        
+        ResultSet rs = null;
+        
+        try {
+            rs = conn.execQuery(query1);
+            rs.absolute(1);
+            doublE = rs.getInt(1);
+            DoubleInput.setText(""+doublE);
+        } catch (SQLException ex) {
+            DoubleInput.setText("N/A");
+            System.err.println(ex.getMessage());
+        }
+        
+        
+        try {
+            rs = conn.execQuery(query2);
+            rs.absolute(1);
+            king = rs.getInt(1);
+            KingInput.setText(""+king);
+        } catch (SQLException ex) {
+            KingInput.setText("N/A");
+            System.err.println(ex.getMessage());
+        }
+        try {
+            rs = conn.execQuery(query3);
+            rs.absolute(1);
+            queen = rs.getInt(1);
+            QueenInput.setText(""+queen);
+        } catch (SQLException ex) {
+            QueenInput.setText("N/A");
+            System.err.println(ex.getMessage());
+        }
+        
+    }
 
     /**
      * Creates new form Rooms
