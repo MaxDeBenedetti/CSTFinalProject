@@ -46,7 +46,6 @@ public class MenuPage extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        NewMemberBox = new javax.swing.JCheckBox();
         MemberNameLabel = new javax.swing.JLabel();
         FirstName = new javax.swing.JTextField();
         LastName = new javax.swing.JTextField();
@@ -61,6 +60,7 @@ public class MenuPage extends javax.swing.JFrame {
         StatePrefill = new javax.swing.JTextField();
         ZipPrefill = new javax.swing.JTextField();
         PhoneNumberPrefill = new javax.swing.JTextField();
+        jButton1 = new javax.swing.JButton();
         Background = new javax.swing.JLabel();
         Menu = new javax.swing.JMenuBar();
         Member = new javax.swing.JMenu();
@@ -73,18 +73,6 @@ public class MenuPage extends javax.swing.JFrame {
         setName("MenuPage"); // NOI18N
         setPreferredSize(new java.awt.Dimension(448, 310));
         getContentPane().setLayout(null);
-
-        NewMemberBox.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        NewMemberBox.setForeground(new java.awt.Color(255, 255, 255));
-        NewMemberBox.setText("New Member");
-        NewMemberBox.setOpaque(false);
-        NewMemberBox.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                NewMemberBoxActionPerformed(evt);
-            }
-        });
-        getContentPane().add(NewMemberBox);
-        NewMemberBox.setBounds(10, 0, 110, 25);
 
         MemberNameLabel.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         MemberNameLabel.setForeground(new java.awt.Color(255, 255, 255));
@@ -209,6 +197,14 @@ public class MenuPage extends javax.swing.JFrame {
         getContentPane().add(PhoneNumberPrefill);
         PhoneNumberPrefill.setBounds(10, 230, 180, 14);
 
+        jButton1.setBackground(new java.awt.Color(0, 0, 0));
+        jButton1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jButton1.setForeground(new java.awt.Color(0, 0, 0));
+        jButton1.setText("New Member");
+        jButton1.setOpaque(false);
+        getContentPane().add(jButton1);
+        jButton1.setBounds(100, 10, 160, 20);
+
         Background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Casino/MenuPic.jpg"))); // NOI18N
         getContentPane().add(Background);
         Background.setBounds(0, 0, 448, 251);
@@ -243,18 +239,13 @@ public class MenuPage extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void NewMemberBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NewMemberBoxActionPerformed
-        //Opens the MemberInfoOld so that we can add a new member
-        
-    }//GEN-LAST:event_NewMemberBoxActionPerformed
-
     private void CasinoNameValueChanged(javax.swing.event.ListSelectionEvent evt) {//GEN-FIRST:event_CasinoNameValueChanged
         // Set the casinoID and fill in the stuff at the bottom.
     }//GEN-LAST:event_CasinoNameValueChanged
 
     private void MemberMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_MemberMouseClicked
         // TODO add your handling code here:
-        MemberInfoOld mif = new MemberInfoOld(conn);
+        MemberInfo mif = new MemberInfo(conn);
         mif.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         mif.setVisible(true);
     }//GEN-LAST:event_MemberMouseClicked
@@ -311,12 +302,12 @@ public class MenuPage extends javax.swing.JFrame {
     private javax.swing.JLabel MemberLevelLabel;
     private javax.swing.JLabel MemberNameLabel;
     private javax.swing.JMenuBar Menu;
-    private javax.swing.JCheckBox NewMemberBox;
     private javax.swing.JTextField PhoneNumberPrefill;
     private javax.swing.JMenu Restaurant;
     private javax.swing.JMenu Rooms;
     private javax.swing.JMenu Spa;
     private javax.swing.JTextField StatePrefill;
     private javax.swing.JTextField ZipPrefill;
+    private javax.swing.JButton jButton1;
     // End of variables declaration//GEN-END:variables
 }

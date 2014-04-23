@@ -9,6 +9,10 @@ package Casino;
  * @author hillman
  */
 public class MemberInfo extends javax.swing.JFrame {
+    
+    public MemberInfo(Connector con){
+        
+    }
 
     /**
      * Creates new form MemberInfo
@@ -50,6 +54,9 @@ public class MemberInfo extends javax.swing.JFrame {
         YearInput = new javax.swing.JTextField();
         MemberIDField = new javax.swing.JTextField();
         MemberIDButton = new javax.swing.JButton();
+        CasinoLabel = new javax.swing.JLabel();
+        CasinoScrollPanel = new javax.swing.JScrollPane();
+        CasinoName = new javax.swing.JList();
         Background = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -262,25 +269,58 @@ public class MemberInfo extends javax.swing.JFrame {
         getContentPane().add(YearInput);
         YearInput.setBounds(300, 210, 50, 20);
 
+        MemberIDField.setBackground(new java.awt.Color(0, 0, 0));
         MemberIDField.setFont(new java.awt.Font("Trebuchet MS", 1, 12)); // NOI18N
         MemberIDField.setForeground(new java.awt.Color(153, 153, 153));
         MemberIDField.setHorizontalAlignment(javax.swing.JTextField.LEFT);
         MemberIDField.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        MemberIDField.setOpaque(false);
         getContentPane().add(MemberIDField);
-        MemberIDField.setBounds(230, 310, 160, 20);
+        MemberIDField.setBounds(210, 360, 160, 20);
 
         MemberIDButton.setBackground(new java.awt.Color(0, 0, 0));
         MemberIDButton.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         MemberIDButton.setText("Get New Member ID");
         getContentPane().add(MemberIDButton);
-        MemberIDButton.setBounds(230, 280, 160, 23);
+        MemberIDButton.setBounds(210, 330, 160, 23);
+
+        CasinoLabel.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        CasinoLabel.setForeground(new java.awt.Color(255, 255, 255));
+        CasinoLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        CasinoLabel.setText("Casino");
+        getContentPane().add(CasinoLabel);
+        CasinoLabel.setBounds(190, 240, 70, 20);
+
+        CasinoScrollPanel.setBackground(new java.awt.Color(0, 51, 0));
+        CasinoScrollPanel.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        CasinoScrollPanel.setForeground(new java.awt.Color(255, 255, 255));
+        CasinoScrollPanel.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+
+        CasinoName.setBackground(new java.awt.Color(0, 0, 0));
+        CasinoName.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        CasinoName.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        CasinoName.setForeground(new java.awt.Color(255, 255, 255));
+        CasinoName.setModel(new javax.swing.AbstractListModel() {
+            String[] strings = { "Orbit", "Rost Petals", "Horse Shoe", "Oasis", "Forum" };
+            public int getSize() { return strings.length; }
+            public Object getElementAt(int i) { return strings[i]; }
+        });
+        CasinoName.setOpaque(false);
+        CasinoName.setSelectionBackground(new java.awt.Color(0, 0, 0));
+        CasinoName.addListSelectionListener(new javax.swing.event.ListSelectionListener() {
+            public void valueChanged(javax.swing.event.ListSelectionEvent evt) {
+                CasinoNameValueChanged(evt);
+            }
+        });
+        CasinoScrollPanel.setViewportView(CasinoName);
+
+        getContentPane().add(CasinoScrollPanel);
+        CasinoScrollPanel.setBounds(270, 240, 100, 80);
 
         Background.setForeground(new java.awt.Color(204, 204, 204));
         Background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Casino/cards black edited.jpg"))); // NOI18N
         Background.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         getContentPane().add(Background);
-        Background.setBounds(0, 0, 410, 452);
+        Background.setBounds(0, -20, 410, 452);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -296,6 +336,10 @@ public class MemberInfo extends javax.swing.JFrame {
     private void StateLabelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_StateLabelActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_StateLabelActionPerformed
+
+    private void CasinoNameValueChanged(javax.swing.event.ListSelectionEvent evt) {//GEN-FIRST:event_CasinoNameValueChanged
+        // Set the casinoID and fill in the stuff at the bottom.
+    }//GEN-LAST:event_CasinoNameValueChanged
 
     /**
      * @param args the command line arguments
@@ -333,6 +377,9 @@ public class MemberInfo extends javax.swing.JFrame {
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Background;
+    private javax.swing.JLabel CasinoLabel;
+    private javax.swing.JList CasinoName;
+    private javax.swing.JScrollPane CasinoScrollPanel;
     private javax.swing.JTextField CityField;
     private javax.swing.JTextField CityLabel;
     private javax.swing.JTextField CountryField;
