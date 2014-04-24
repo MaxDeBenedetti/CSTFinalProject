@@ -4,6 +4,11 @@
  */
 package Casino;
 
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 /**
  * The user can check the selection of food for the member.  Several items
  * can be selected simultaneously. 
@@ -11,6 +16,58 @@ package Casino;
  * The Member name, Casino, and Member Level are prefilled from the Menu page.
  */
 public class Restaurant extends javax.swing.JFrame {
+    
+    Connector conn;
+    int casID;
+    public Restaurant(Connector con, int casinoID){
+        conn = con;
+        casID = casinoID;
+        initComponents();
+        
+        String queryBase = "select FOODNAME, FOODTIMING, PRICE\n" +
+            "from FOODMENU\n"
+                + "where CASINOID="+casID+" and FOODCATEGORY = '";
+        
+        String queryAppetizer = queryBase + "APPETIZER'";
+        String queryEntree = queryBase +"ENTREES'";
+        String queryDeserts = queryBase+"DESERTS'";
+        
+        String appet ="";
+        String entr = "";
+        String desr ="";
+        
+        ResultSet rs1 = null;
+        ResultSet rs2 = null;
+        ResultSet rs3 = null;
+        try {
+            rs1 = conn.execQuery(queryAppetizer);
+            while(rs1.next()){
+                appet += rs1.getString(1)+" "+rs1.getString(2)+" "+rs1.getString(3)+"\n";
+            }
+        } catch (SQLException ex) {
+            
+        }
+        try {
+            rs2 = conn.execQuery(queryEntree);
+            while(rs1.next()){
+                entr += rs2.getString(1)+" "+rs2.getString(2)+" "+rs2.getString(3)+"\n";
+            }
+        } catch (SQLException ex) {
+            
+        }
+        try {
+            rs3 = conn.execQuery(queryDeserts);
+            while(rs1.next()){
+                desr += rs3.getString(1)+" "+rs3.getString(2)+" "+rs3.getString(3)+"\n";
+            }
+        } catch (SQLException ex) {
+            
+        }
+        
+        jTextArea1.setText(appet);
+        jTextArea2.setText(entr);
+        jTextArea3.setText(desr);
+    }
 
     /**
      */

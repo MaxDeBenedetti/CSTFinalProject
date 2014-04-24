@@ -23,7 +23,7 @@ public class GamingDevice extends javax.swing.JFrame {
         casID = casinoID;
         initComponents();
         
-        String query = "sselect distinct dt.DEVICENAME, COUNT(*)\n" +
+        String query = "select distinct dt.DEVICENAME, COUNT(*)\n" +
         "from DEVICETYPE as dt \n" +
         "	join GAMBLINGDEVICE as gd\n" +
         "	on dt.DEVICETYPEID = gd.DeviceID\n" +
@@ -38,7 +38,7 @@ public class GamingDevice extends javax.swing.JFrame {
             }
             textArea2.setText(devices);
         } catch (SQLException ex) {
-            System.err.println(ex.getMessage());
+            Logger.getLogger(MemberInfo.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
     /**

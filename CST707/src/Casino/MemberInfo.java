@@ -4,21 +4,112 @@
  */
 package Casino;
 
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.Vector;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 /**
  *
  * @author hillman
  */
 public class MemberInfo extends javax.swing.JFrame {
     
+    private Connector conn;
+    private Vector casNames, casIDs;
+    private int memID;
+    
+    //add a new member
     public MemberInfo(Connector con){
+        conn = con;
+        initComponents();
+        
+        casNames = new Vector();
+        casIDs = new Vector();
+        getCasinos();
+    }
+    
+    //lookup existing member
+    public MemberInfo(Connector con, int memberID){
+        conn = con;
+        memID = memberID;
+        initComponents();
+        
+        casNames = new Vector();
+        casIDs = new Vector();
+        getCasinos();
+        
+        String query = "select FIRSTNAME, LASTNAME, ADDRESSLINE1, CITY, STATE, ZIPCODE, COUNTRY, PHONENUMBER, EMAILADDRESS "
+                + "from member "
+                + "where MEMBERID="+memID;
+        ResultSet rs =null;
+        String firstName = "";
+        String lastName = "";
+        String street = "";
+        String city = "";
+        String state = "";
+        String zipCode = "";
+        String country = "";
+        String phone = "";
+        String email = "";
+        
+        try {
+            rs =conn.execQuery(query);
+            rs.next();
+            firstName = rs.getString(1);
+            lastName = rs.getString(2);
+            street = rs.getString(3);
+            city = rs.getString(4);
+            state = rs.getString(5);
+            zipCode = rs.getString(6);
+            country = rs.getString(7);
+            phone = rs.getString(8);
+            email = rs.getString(9);
+            
+        } catch (SQLException ex) {
+            Logger.getLogger(MemberInfo.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        FirstNameField.setText(firstName);
+        LastNameField.setText(lastName);
+        PhoneField.setText(phone);
+        EmailField.setText(email);
+        StreetField.setText(street);
+        CityField.setText(city);
+        StateField.setText(state);
+        ZipCodeField.setText(zipCode);
+        CountryField.setText(country);
         
     }
+    
 
     /**
      * Creates new form MemberInfo
      */
     public MemberInfo() {
         initComponents();
+    }
+    
+    
+    private void getCasinos(){
+        String query = "select CASINOID, CASINONAME " +
+                "from CASINODETAILS ";
+        try {
+            ResultSet rs = conn.execQuery(query);
+            
+            while(rs.next()){
+                casNames.add(rs.getString(2));
+                casIDs.add(rs.getInt(1));
+            }
+            
+            CasinoName.setListData(casNames);
+            
+        } catch (SQLException ex) {
+            System.err.println(ex.getMessage());
+        }
+        
+        
     }
 
     /**
@@ -39,7 +130,7 @@ public class MemberInfo extends javax.swing.JFrame {
         EmailLabel = new javax.swing.JTextField();
         EmailField = new javax.swing.JTextField();
         StreetLabel = new javax.swing.JTextField();
-        StreetNameField = new javax.swing.JTextField();
+        StreetField = new javax.swing.JTextField();
         CityLabel = new javax.swing.JTextField();
         CityField = new javax.swing.JTextField();
         StateLabel = new javax.swing.JTextField();
@@ -48,10 +139,6 @@ public class MemberInfo extends javax.swing.JFrame {
         ZipCodeField = new javax.swing.JTextField();
         CountryField = new javax.swing.JTextField();
         CountryLabel = new javax.swing.JTextField();
-        DateOfBirthLabel = new javax.swing.JTextField();
-        MonthInput = new javax.swing.JTextField();
-        DayInput = new javax.swing.JTextField();
-        YearInput = new javax.swing.JTextField();
         MemberIDField = new javax.swing.JTextField();
         MemberIDButton = new javax.swing.JButton();
         CasinoLabel = new javax.swing.JLabel();
@@ -147,13 +234,13 @@ public class MemberInfo extends javax.swing.JFrame {
         getContentPane().add(StreetLabel);
         StreetLabel.setBounds(150, 110, 50, 20);
 
-        StreetNameField.setFont(new java.awt.Font("Trebuchet MS", 1, 12)); // NOI18N
-        StreetNameField.setForeground(new java.awt.Color(153, 153, 153));
-        StreetNameField.setHorizontalAlignment(javax.swing.JTextField.LEFT);
-        StreetNameField.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        StreetNameField.setOpaque(false);
-        getContentPane().add(StreetNameField);
-        StreetNameField.setBounds(200, 110, 120, 20);
+        StreetField.setFont(new java.awt.Font("Trebuchet MS", 1, 12)); // NOI18N
+        StreetField.setForeground(new java.awt.Color(153, 153, 153));
+        StreetField.setHorizontalAlignment(javax.swing.JTextField.LEFT);
+        StreetField.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        StreetField.setOpaque(false);
+        getContentPane().add(StreetField);
+        StreetField.setBounds(200, 110, 120, 20);
 
         CityLabel.setFont(new java.awt.Font("Trebuchet MS", 1, 12)); // NOI18N
         CityLabel.setForeground(new java.awt.Color(255, 255, 255));
@@ -233,42 +320,6 @@ public class MemberInfo extends javax.swing.JFrame {
         getContentPane().add(CountryLabel);
         CountryLabel.setBounds(140, 190, 60, 20);
 
-        DateOfBirthLabel.setFont(new java.awt.Font("Trebuchet MS", 1, 12)); // NOI18N
-        DateOfBirthLabel.setForeground(new java.awt.Color(255, 255, 255));
-        DateOfBirthLabel.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
-        DateOfBirthLabel.setText("Date Of Birth");
-        DateOfBirthLabel.setBorder(null);
-        DateOfBirthLabel.setOpaque(false);
-        getContentPane().add(DateOfBirthLabel);
-        DateOfBirthLabel.setBounds(120, 210, 80, 20);
-
-        MonthInput.setFont(new java.awt.Font("Trebuchet MS", 1, 12)); // NOI18N
-        MonthInput.setForeground(new java.awt.Color(255, 255, 255));
-        MonthInput.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        MonthInput.setText("MM");
-        MonthInput.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        MonthInput.setOpaque(false);
-        getContentPane().add(MonthInput);
-        MonthInput.setBounds(200, 210, 50, 20);
-
-        DayInput.setFont(new java.awt.Font("Trebuchet MS", 1, 12)); // NOI18N
-        DayInput.setForeground(new java.awt.Color(255, 255, 255));
-        DayInput.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        DayInput.setText("DD");
-        DayInput.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        DayInput.setOpaque(false);
-        getContentPane().add(DayInput);
-        DayInput.setBounds(250, 210, 50, 20);
-
-        YearInput.setFont(new java.awt.Font("Trebuchet MS", 1, 12)); // NOI18N
-        YearInput.setForeground(new java.awt.Color(255, 255, 255));
-        YearInput.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        YearInput.setText("YYYY");
-        YearInput.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        YearInput.setOpaque(false);
-        getContentPane().add(YearInput);
-        YearInput.setBounds(300, 210, 50, 20);
-
         MemberIDField.setBackground(new java.awt.Color(0, 0, 0));
         MemberIDField.setFont(new java.awt.Font("Trebuchet MS", 1, 12)); // NOI18N
         MemberIDField.setForeground(new java.awt.Color(153, 153, 153));
@@ -280,6 +331,11 @@ public class MemberInfo extends javax.swing.JFrame {
         MemberIDButton.setBackground(new java.awt.Color(0, 0, 0));
         MemberIDButton.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         MemberIDButton.setText("Get New Member ID");
+        MemberIDButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                MemberIDButtonActionPerformed(evt);
+            }
+        });
         getContentPane().add(MemberIDButton);
         MemberIDButton.setBounds(210, 330, 160, 23);
 
@@ -341,6 +397,39 @@ public class MemberInfo extends javax.swing.JFrame {
         // Set the casinoID and fill in the stuff at the bottom.
     }//GEN-LAST:event_CasinoNameValueChanged
 
+    private void MemberIDButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MemberIDButtonActionPerformed
+        // TODO add your handling code here:
+        String firstName = "'"+FirstNameField.getText()+"', ";
+        String lastName = "'"+LastNameField.getText()+"', ";
+        String phone = "'"+PhoneField.getText()+"', ";
+        String email = "'"+EmailField.getText()+"' ";
+        String street = "'"+StreetField.getText()+"', ";
+        String city = "'"+CityField.getText()+"', ";
+        String state = "'"+StateField.getText()+"', ";
+        String zipCode = "'"+ZipCodeField.getText()+"', ";
+        String country = "'"+CountryField.getText()+"', ";
+        
+        int casinoID = (int)(casIDs.get(CasinoName.getSelectedIndex()));
+        String insert1 = "insert into MEMBER (FIRSTNAME, LASTNAME, ADDRESSLINE1, CITY, STATE, ZIPCODE, COUNTRY, PHONENUMBER, EMAILADDRESS) values ("
+                + firstName+lastName+street+city+state+zipCode+country+phone+email+")";
+        try {
+            conn.execUpdate(insert1);
+            ResultSet newId = conn.execQuery("select max(MEMBERID) from MEMBER");
+            newId.next();
+            memID = newId.getInt(1);
+        } catch (SQLException ex) {
+            System.err.println(ex);
+        }
+        
+        String insert2 = "insert into CASINOMEMBERSHIP (MEMBERID, CASINOID, MEMBERSHIPTYPE) values ("
+                + memID+", "+casinoID+", 'Bronze'"+")";
+        try {
+            conn.execUpdate(insert2);
+        } catch (SQLException ex) {
+            System.err.println(ex);
+        }
+    }//GEN-LAST:event_MemberIDButtonActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -384,8 +473,6 @@ public class MemberInfo extends javax.swing.JFrame {
     private javax.swing.JTextField CityLabel;
     private javax.swing.JTextField CountryField;
     private javax.swing.JTextField CountryLabel;
-    private javax.swing.JTextField DateOfBirthLabel;
-    private javax.swing.JTextField DayInput;
     private javax.swing.JTextField EmailField;
     private javax.swing.JTextField EmailLabel;
     private javax.swing.JTextField FirstNameField;
@@ -394,14 +481,12 @@ public class MemberInfo extends javax.swing.JFrame {
     private javax.swing.JTextField LastNameLabel;
     private javax.swing.JButton MemberIDButton;
     private javax.swing.JTextField MemberIDField;
-    private javax.swing.JTextField MonthInput;
     private javax.swing.JTextField PhoneField;
     private javax.swing.JTextField PhoneLabel;
     private javax.swing.JTextField StateField;
     private javax.swing.JTextField StateLabel;
+    private javax.swing.JTextField StreetField;
     private javax.swing.JTextField StreetLabel;
-    private javax.swing.JTextField StreetNameField;
-    private javax.swing.JTextField YearInput;
     private javax.swing.JTextField ZipCodeField;
     private javax.swing.JTextField ZipCodeLabel;
     // End of variables declaration//GEN-END:variables

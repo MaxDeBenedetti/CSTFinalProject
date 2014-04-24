@@ -6,7 +6,10 @@ package Casino;
 
 import java.awt.Color;
 import java.awt.Dimension;
+import java.sql.SQLException;
 import java.util.Date;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JFrame;
 
 /**
@@ -180,17 +183,29 @@ public class Spa extends javax.swing.JFrame {
                 month = Integer.parseInt(MonthInput.getText());
                 year = Integer.parseInt(YearInput.getText());
 
-                facial = Facial.isSelected();
-                haircut = Haircut.isSelected();
-                massage = Massage.isSelected();
-                pedicure = Pedicure.isSelected();
 
                 Date date = new Date(year, month, day);
 
-                String query = "";
+                String query = "insert into SPASERVICES (MEMBERID,DATEOFSERVICE,SERVICES)"
+                        + "values ("+memID+", "+date+", ";
+                if(Facial.isSelected()){
+                    query += "'Facial' ";
+                }
+                if(Haircut.isSelected()){
+                    query += "'Haircut' ";
+                }
+                if(Massage.isSelected()){
+                    query += "'Massage' ";
+                }
+                if(Pedicure.isSelected()){
+                    query += "'Pedicure' ";
+                }
+                conn.execUpdate(query);
             }
             catch(java.lang.NumberFormatException nfe){
 
+            } catch (SQLException ex) {
+                System.err.println(ex.getMessage());
             }
         }
     }//GEN-LAST:event_ScheduleSessionActionPerformed

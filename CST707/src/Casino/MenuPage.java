@@ -1,6 +1,11 @@
 
 package Casino;
 
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.Vector;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JFrame;
 import javax.swing.WindowConstants;
 
@@ -25,7 +30,9 @@ public class MenuPage extends javax.swing.JFrame {
     private Connector conn;
     private int casinoID = 1;//accepts the value of the selected casino
     private String casinoName = "haha";
-    private String memberID;//accepts the value of the selected member
+    private int memberID =1001;//accepts the value of the selected member
+    private ResultSet rs;
+    
     public MenuPage(Connector con){
         conn = con;
         initComponents();
@@ -47,8 +54,7 @@ public class MenuPage extends javax.swing.JFrame {
     private void initComponents() {
 
         MemberNameLabel = new javax.swing.JLabel();
-        FirstName = new javax.swing.JTextField();
-        LastName = new javax.swing.JTextField();
+        IDField = new javax.swing.JTextField();
         MemberLevelLabel = new javax.swing.JLabel();
         MemberLevel = new javax.swing.JTextField();
         CasinoLabel = new javax.swing.JLabel();
@@ -77,25 +83,22 @@ public class MenuPage extends javax.swing.JFrame {
         MemberNameLabel.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         MemberNameLabel.setForeground(new java.awt.Color(255, 255, 255));
         MemberNameLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        MemberNameLabel.setText("Member Name");
+        MemberNameLabel.setText("Member ID");
         getContentPane().add(MemberNameLabel);
         MemberNameLabel.setBounds(0, 30, 90, 20);
 
-        FirstName.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        FirstName.setForeground(new java.awt.Color(255, 255, 255));
-        FirstName.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        FirstName.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        FirstName.setOpaque(false);
-        getContentPane().add(FirstName);
-        FirstName.setBounds(100, 30, 90, 19);
-
-        LastName.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        LastName.setForeground(new java.awt.Color(255, 255, 255));
-        LastName.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        LastName.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        LastName.setOpaque(false);
-        getContentPane().add(LastName);
-        LastName.setBounds(190, 30, 100, 19);
+        IDField.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        IDField.setForeground(new java.awt.Color(255, 255, 255));
+        IDField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        IDField.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        IDField.setOpaque(false);
+        IDField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                IDFieldActionPerformed(evt);
+            }
+        });
+        getContentPane().add(IDField);
+        IDField.setBounds(100, 30, 100, 19);
 
         MemberLevelLabel.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         MemberLevelLabel.setForeground(new java.awt.Color(255, 255, 255));
@@ -231,12 +234,27 @@ public class MenuPage extends javax.swing.JFrame {
         Menu.add(Rooms);
 
         Restaurant.setText("Restaurant");
+        Restaurant.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                RestaurantMouseClicked(evt);
+            }
+        });
         Menu.add(Restaurant);
 
         Device.setText("Gaming Device");
+        Device.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                DeviceMouseClicked(evt);
+            }
+        });
         Menu.add(Device);
 
         Spa.setText("Spa");
+        Spa.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                SpaMouseClicked(evt);
+            }
+        });
         Menu.add(Spa);
 
         setJMenuBar(Menu);
@@ -246,11 +264,32 @@ public class MenuPage extends javax.swing.JFrame {
 
     private void CasinoNameValueChanged(javax.swing.event.ListSelectionEvent evt) {//GEN-FIRST:event_CasinoNameValueChanged
         // Set the casinoID and fill in the stuff at the bottom.
+        int rsIndex = CasinoName.getSelectedIndex()+1;
+        try {
+            rs.absolute(rsIndex);
+            casinoID = rs.getInt("CASINOID");
+            casinoName = rs.getString("CASINONAME");
+            AddressLine1Prefill.setText(rs.getString("ADDRESSLINE1"));
+            AddressLine2Prefill.setText(rs.getString("ADDRESSLINE2"));
+            CityPrefill.setText(rs.getString("CITY"));
+            StatePrefill.setText(rs.getString("STATE"));
+            ZipPrefill.setText(rs.getString("ZIPCODE"));
+            PhoneNumberPrefill.setText(rs.getString("PHONENUMBER"));
+            MemberLevel.setText(rs.getString("MEMBERSHIPTYPE"));
+        } catch (SQLException ex) {
+            Logger.getLogger(MenuPage.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_CasinoNameValueChanged
 
     private void MemberMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_MemberMouseClicked
         // TODO add your handling code here:
-        MemberInfo mif = new MemberInfo(conn);
+        try{
+            memberID = Integer.parseInt(IDField.getText());
+        }
+        catch(java.lang.NumberFormatException nfe){
+            
+        }
+        MemberInfo mif = new MemberInfo(conn, memberID);
         mif.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         mif.setVisible(true);
     }//GEN-LAST:event_MemberMouseClicked
@@ -264,8 +303,61 @@ public class MenuPage extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        
+        MemberInfo mif = new MemberInfo(conn);
+        mif.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        mif.setVisible(true);
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void RestaurantMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_RestaurantMouseClicked
+        // TODO add your handling code here:
+        Restaurant rsf =new Restaurant(conn, casinoID);
+        rsf.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        rsf.setVisible(true);
+    }//GEN-LAST:event_RestaurantMouseClicked
+
+    private void DeviceMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_DeviceMouseClicked
+        // TODO add your handling code here:
+        GamingDevice rf = new GamingDevice(conn, casinoID);
+        rf.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        rf.setVisible(true);
+    }//GEN-LAST:event_DeviceMouseClicked
+
+    private void SpaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SpaMouseClicked
+        // TODO add your handling code here:
+        Spa rf = new Spa(conn, casinoID);
+        rf.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        rf.setVisible(true);
+    }//GEN-LAST:event_SpaMouseClicked
+
+    
+    private void IDFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_IDFieldActionPerformed
+        // TODO add your handling code here:
+        try{
+            memberID = Integer.parseInt(IDField.getText());
+            
+        }
+        catch(java.lang.NumberFormatException nfe){
+            IDField.setText(""+memberID);
+        }
+        
+        rs = null;
+        String query = "select * " +
+            "from CASINODETAILS as cd " +
+            "join CASINOMEMBERSHIP as cm " +
+            "	on cd.CASINOID = cm.CASINOID "
+                + "where cm.MEMBERID ="+memberID;
+        try {
+            rs = conn.execQuery(query);
+            Vector vec = new Vector();
+            while(rs.next()){
+                vec.add(rs.getString(2));
+            }
+            CasinoName.setListData(vec);
+        } catch (SQLException ex) {
+            Logger.getLogger(MenuPage.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+    }//GEN-LAST:event_IDFieldActionPerformed
 
     /**
      * @param args the command line arguments
@@ -305,8 +397,7 @@ public class MenuPage extends javax.swing.JFrame {
     private javax.swing.JScrollPane CasinoScrollPanel;
     private javax.swing.JTextField CityPrefill;
     private javax.swing.JMenu Device;
-    private javax.swing.JTextField FirstName;
-    private javax.swing.JTextField LastName;
+    private javax.swing.JTextField IDField;
     private javax.swing.JMenu Member;
     private javax.swing.JTextField MemberLevel;
     private javax.swing.JLabel MemberLevelLabel;
