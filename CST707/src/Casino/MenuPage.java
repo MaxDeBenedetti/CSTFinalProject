@@ -36,6 +36,19 @@ public class MenuPage extends javax.swing.JFrame {
     public MenuPage(Connector con){
         conn = con;
         initComponents();
+        String query = "select * from CASINODETAILS as cd "
+                + "join CASINOMEMBERSHIP as cm "
+                + "on cd.CASINOID = cm.CASINOID ";
+        try {
+            rs =conn.execQuery(query);
+            Vector v = new Vector();
+            while(rs.next()){
+                v.add(rs.getString(2));
+            }
+            CasinoName.setListData(v);
+        } catch (SQLException ex) {
+            Logger.getLogger(MenuPage.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     /**
@@ -265,6 +278,7 @@ public class MenuPage extends javax.swing.JFrame {
     private void CasinoNameValueChanged(javax.swing.event.ListSelectionEvent evt) {//GEN-FIRST:event_CasinoNameValueChanged
         // Set the casinoID and fill in the stuff at the bottom.
         int rsIndex = CasinoName.getSelectedIndex()+1;
+
         try {
             rs.absolute(rsIndex);
             casinoID = rs.getInt("CASINOID");
@@ -279,6 +293,7 @@ public class MenuPage extends javax.swing.JFrame {
         } catch (SQLException ex) {
             Logger.getLogger(MenuPage.class.getName()).log(Level.SEVERE, null, ex);
         }
+
     }//GEN-LAST:event_CasinoNameValueChanged
 
     private void MemberMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_MemberMouseClicked
