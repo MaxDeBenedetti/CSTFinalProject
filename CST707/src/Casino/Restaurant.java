@@ -45,7 +45,7 @@ public class Restaurant extends javax.swing.JFrame {
                 appet += rs1.getString(1)+" "+rs1.getString(2)+" "+rs1.getString(3)+"\n";
             }
         } catch (SQLException ex) {
-            
+            //System.err.println(ex.getMessage());
         }
         try {
             rs2 = conn.execQuery(queryEntree);
@@ -53,7 +53,7 @@ public class Restaurant extends javax.swing.JFrame {
                 entr += rs2.getString(1)+" "+rs2.getString(2)+" "+rs2.getString(3)+"\n";
             }
         } catch (SQLException ex) {
-            
+            //System.err.println(ex.getMessage());
         }
         try {
             rs3 = conn.execQuery(queryDeserts);
@@ -61,7 +61,7 @@ public class Restaurant extends javax.swing.JFrame {
                 desr += rs3.getString(1)+" "+rs3.getString(2)+" "+rs3.getString(3)+"\n";
             }
         } catch (SQLException ex) {
-            
+            //System.err.println(ex.getMessage());
         }
         
         jTextArea1.setText(appet);
