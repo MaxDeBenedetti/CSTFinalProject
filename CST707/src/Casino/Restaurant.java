@@ -115,7 +115,7 @@ public class Restaurant extends javax.swing.JFrame {
 
         Dinner.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         Dinner.setForeground(new java.awt.Color(255, 255, 255));
-        Dinner.setText("Desert");
+        Dinner.setText("Dessert");
         getContentPane().add(Dinner);
         Dinner.setBounds(150, 200, 60, 30);
 

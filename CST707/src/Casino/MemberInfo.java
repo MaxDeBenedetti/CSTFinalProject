@@ -28,6 +28,7 @@ public class MemberInfo extends javax.swing.JFrame {
         casNames = new Vector();
         casIDs = new Vector();
         getCasinos();
+        memID = -999;
     }
     
     //lookup existing member
@@ -70,7 +71,7 @@ public class MemberInfo extends javax.swing.JFrame {
         } catch (SQLException ex) {
             Logger.getLogger(MemberInfo.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
+        MemberiD.setText(""+memID);
         FirstNameField.setText(firstName);
         LastNameField.setText(lastName);
         PhoneField.setText(phone);
@@ -121,6 +122,8 @@ public class MemberInfo extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        MemberIDLabel = new javax.swing.JTextField();
+        MemberiD = new javax.swing.JTextField();
         FirstNameLabel = new javax.swing.JTextField();
         FirstNameField = new javax.swing.JTextField();
         LastNameLabel = new javax.swing.JTextField();
@@ -139,7 +142,6 @@ public class MemberInfo extends javax.swing.JFrame {
         ZipCodeField = new javax.swing.JTextField();
         CountryField = new javax.swing.JTextField();
         CountryLabel = new javax.swing.JTextField();
-        MemberIDField = new javax.swing.JTextField();
         MemberIDButton = new javax.swing.JButton();
         CasinoLabel = new javax.swing.JLabel();
         CasinoScrollPanel = new javax.swing.JScrollPane();
@@ -150,6 +152,27 @@ public class MemberInfo extends javax.swing.JFrame {
         setPreferredSize(new java.awt.Dimension(425, 475));
         getContentPane().setLayout(null);
 
+        MemberIDLabel.setEditable(false);
+        MemberIDLabel.setFont(new java.awt.Font("Trebuchet MS", 1, 12)); // NOI18N
+        MemberIDLabel.setForeground(new java.awt.Color(255, 255, 255));
+        MemberIDLabel.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
+        MemberIDLabel.setText("Member ID");
+        MemberIDLabel.setBorder(null);
+        MemberIDLabel.setOpaque(false);
+        MemberIDLabel.setPreferredSize(new java.awt.Dimension(61, 215));
+        getContentPane().add(MemberIDLabel);
+        MemberIDLabel.setBounds(130, 10, 70, 20);
+
+        MemberiD.setEditable(false);
+        MemberiD.setFont(new java.awt.Font("Trebuchet MS", 1, 12)); // NOI18N
+        MemberiD.setForeground(new java.awt.Color(153, 153, 153));
+        MemberiD.setHorizontalAlignment(javax.swing.JTextField.LEFT);
+        MemberiD.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        MemberiD.setOpaque(false);
+        getContentPane().add(MemberiD);
+        MemberiD.setBounds(200, 10, 120, 20);
+
+        FirstNameLabel.setEditable(false);
         FirstNameLabel.setFont(new java.awt.Font("Trebuchet MS", 1, 12)); // NOI18N
         FirstNameLabel.setForeground(new java.awt.Color(255, 255, 255));
         FirstNameLabel.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
@@ -168,6 +191,7 @@ public class MemberInfo extends javax.swing.JFrame {
         getContentPane().add(FirstNameField);
         FirstNameField.setBounds(200, 30, 120, 20);
 
+        LastNameLabel.setEditable(false);
         LastNameLabel.setFont(new java.awt.Font("Trebuchet MS", 1, 12)); // NOI18N
         LastNameLabel.setForeground(new java.awt.Color(255, 255, 255));
         LastNameLabel.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
@@ -186,6 +210,7 @@ public class MemberInfo extends javax.swing.JFrame {
         getContentPane().add(LastNameField);
         LastNameField.setBounds(200, 50, 120, 20);
 
+        PhoneLabel.setEditable(false);
         PhoneLabel.setFont(new java.awt.Font("Trebuchet MS", 1, 12)); // NOI18N
         PhoneLabel.setForeground(new java.awt.Color(255, 255, 255));
         PhoneLabel.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
@@ -203,6 +228,7 @@ public class MemberInfo extends javax.swing.JFrame {
         getContentPane().add(PhoneField);
         PhoneField.setBounds(200, 70, 120, 20);
 
+        EmailLabel.setEditable(false);
         EmailLabel.setFont(new java.awt.Font("Trebuchet MS", 1, 12)); // NOI18N
         EmailLabel.setForeground(new java.awt.Color(255, 255, 255));
         EmailLabel.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
@@ -220,6 +246,7 @@ public class MemberInfo extends javax.swing.JFrame {
         getContentPane().add(EmailField);
         EmailField.setBounds(200, 90, 120, 20);
 
+        StreetLabel.setEditable(false);
         StreetLabel.setFont(new java.awt.Font("Trebuchet MS", 1, 12)); // NOI18N
         StreetLabel.setForeground(new java.awt.Color(255, 255, 255));
         StreetLabel.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
@@ -242,6 +269,7 @@ public class MemberInfo extends javax.swing.JFrame {
         getContentPane().add(StreetField);
         StreetField.setBounds(200, 110, 120, 20);
 
+        CityLabel.setEditable(false);
         CityLabel.setFont(new java.awt.Font("Trebuchet MS", 1, 12)); // NOI18N
         CityLabel.setForeground(new java.awt.Color(255, 255, 255));
         CityLabel.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
@@ -264,6 +292,7 @@ public class MemberInfo extends javax.swing.JFrame {
         getContentPane().add(CityField);
         CityField.setBounds(200, 130, 120, 20);
 
+        StateLabel.setEditable(false);
         StateLabel.setFont(new java.awt.Font("Trebuchet MS", 1, 12)); // NOI18N
         StateLabel.setForeground(new java.awt.Color(255, 255, 255));
         StateLabel.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
@@ -286,6 +315,7 @@ public class MemberInfo extends javax.swing.JFrame {
         getContentPane().add(StateField);
         StateField.setBounds(200, 150, 120, 20);
 
+        ZipCodeLabel.setEditable(false);
         ZipCodeLabel.setFont(new java.awt.Font("Trebuchet MS", 1, 12)); // NOI18N
         ZipCodeLabel.setForeground(new java.awt.Color(255, 255, 255));
         ZipCodeLabel.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
@@ -311,6 +341,7 @@ public class MemberInfo extends javax.swing.JFrame {
         getContentPane().add(CountryField);
         CountryField.setBounds(200, 190, 120, 20);
 
+        CountryLabel.setEditable(false);
         CountryLabel.setFont(new java.awt.Font("Trebuchet MS", 1, 12)); // NOI18N
         CountryLabel.setForeground(new java.awt.Color(255, 255, 255));
         CountryLabel.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
@@ -320,24 +351,16 @@ public class MemberInfo extends javax.swing.JFrame {
         getContentPane().add(CountryLabel);
         CountryLabel.setBounds(140, 190, 60, 20);
 
-        MemberIDField.setBackground(new java.awt.Color(0, 0, 0));
-        MemberIDField.setFont(new java.awt.Font("Trebuchet MS", 1, 12)); // NOI18N
-        MemberIDField.setForeground(new java.awt.Color(153, 153, 153));
-        MemberIDField.setHorizontalAlignment(javax.swing.JTextField.LEFT);
-        MemberIDField.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        getContentPane().add(MemberIDField);
-        MemberIDField.setBounds(210, 360, 160, 20);
-
         MemberIDButton.setBackground(new java.awt.Color(0, 0, 0));
         MemberIDButton.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        MemberIDButton.setText("Get New Member ID");
+        MemberIDButton.setText("Get New Membership");
         MemberIDButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 MemberIDButtonActionPerformed(evt);
             }
         });
         getContentPane().add(MemberIDButton);
-        MemberIDButton.setBounds(210, 330, 160, 23);
+        MemberIDButton.setBounds(210, 330, 170, 23);
 
         CasinoLabel.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         CasinoLabel.setForeground(new java.awt.Color(255, 255, 255));
@@ -410,15 +433,19 @@ public class MemberInfo extends javax.swing.JFrame {
         String country = "'"+CountryField.getText()+"', ";
         
         int casinoID = (int)(casIDs.get(CasinoName.getSelectedIndex()));
-        String insert1 = "insert into MEMBER (FIRSTNAME, LASTNAME, ADDRESSLINE1, CITY, STATE, ZIPCODE, COUNTRY, PHONENUMBER, EMAILADDRESS) values ("
-                + firstName+lastName+street+city+state+zipCode+country+phone+email+")";
-        try {
-            conn.execUpdate(insert1);
-            ResultSet newId = conn.execQuery("select max(MEMBERID) from MEMBER");
-            newId.next();
-            memID = newId.getInt(1);
-        } catch (SQLException ex) {
-            System.err.println(ex);
+        String insert1;
+        if(memID == -999){
+            insert1 = "insert into MEMBER (FIRSTNAME, LASTNAME, ADDRESSLINE1, CITY, STATE, ZIPCODE, COUNTRY, PHONENUMBER, EMAILADDRESS) values ("
+                    + firstName+lastName+street+city+state+zipCode+country+phone+email+")";
+        
+            try {
+                conn.execUpdate(insert1);
+                ResultSet newId = conn.execQuery("select max(MEMBERID) from MEMBER");
+                newId.next();
+                memID = newId.getInt(1);
+            } catch (SQLException ex) {
+                System.err.println(ex);
+            }
         }
         
         String insert2 = "insert into CASINOMEMBERSHIP (MEMBERID, CASINOID, MEMBERSHIPTYPE) values ("
@@ -428,6 +455,7 @@ public class MemberInfo extends javax.swing.JFrame {
         } catch (SQLException ex) {
             System.err.println(ex);
         }
+        MemberiD.setText(""+memID);
     }//GEN-LAST:event_MemberIDButtonActionPerformed
 
     /**
@@ -480,7 +508,8 @@ public class MemberInfo extends javax.swing.JFrame {
     private javax.swing.JTextField LastNameField;
     private javax.swing.JTextField LastNameLabel;
     private javax.swing.JButton MemberIDButton;
-    private javax.swing.JTextField MemberIDField;
+    private javax.swing.JTextField MemberIDLabel;
+    private javax.swing.JTextField MemberiD;
     private javax.swing.JTextField PhoneField;
     private javax.swing.JTextField PhoneLabel;
     private javax.swing.JTextField StateField;

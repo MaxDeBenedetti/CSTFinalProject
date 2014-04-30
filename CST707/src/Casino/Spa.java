@@ -7,6 +7,7 @@ package Casino;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.sql.SQLException;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -57,7 +58,7 @@ public class Spa extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setName("Spa"); // NOI18N
-        setPreferredSize(new java.awt.Dimension(400, 250));
+        setPreferredSize(new java.awt.Dimension(400, 262));
         setResizable(false);
         getContentPane().setLayout(null);
 
@@ -70,6 +71,11 @@ public class Spa extends javax.swing.JFrame {
         MonthInput.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 MonthInputActionPerformed(evt);
+            }
+        });
+        MonthInput.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                MonthInputFocusGained(evt);
             }
         });
         getContentPane().add(MonthInput);
@@ -86,6 +92,11 @@ public class Spa extends javax.swing.JFrame {
                 DayInputActionPerformed(evt);
             }
         });
+        DayInput.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                DayInputFocusGained(evt);
+            }
+        });
         getContentPane().add(DayInput);
         DayInput.setBounds(210, 10, 40, 20);
 
@@ -98,6 +109,11 @@ public class Spa extends javax.swing.JFrame {
         YearInput.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 YearInputActionPerformed(evt);
+            }
+        });
+        YearInput.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                YearInputFocusGained(evt);
             }
         });
         getContentPane().add(YearInput);
@@ -187,28 +203,45 @@ public class Spa extends javax.swing.JFrame {
                 Date date = new Date(year, month, day);
 
                 String query = "insert into SPASERVICES (MEMBERID,DATEOFSERVICE,SERVICES)"
-                        + "values ("+memID+", "+date+", ";
+                        + "values ("+memID+", '"+date.getMonth()+"-"+date.getDay()+"-"+date.getYear()+"', '";
                 if(Facial.isSelected()){
-                    query += "'Facial' ";
+                    query += "Facial  ";
                 }
                 if(Haircut.isSelected()){
-                    query += "'Haircut' ";
+                    query += "Haircut  ";
                 }
                 if(Massage.isSelected()){
-                    query += "'Massage' ";
+                    query += "Massage  ";
                 }
                 if(Pedicure.isSelected()){
-                    query += "'Pedicure' ";
+                    query += "Pedicure  ";
                 }
+                query += "')";
                 conn.execUpdate(query);
+                
             }
             catch(java.lang.NumberFormatException nfe){
 
             } catch (SQLException ex) {
-                System.err.println(ex.getMessage());
+                Logger.getLogger(MenuPage.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
     }//GEN-LAST:event_ScheduleSessionActionPerformed
+
+    private void MonthInputFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_MonthInputFocusGained
+        // TODO add your handling code here:
+        MonthInput.setText("");
+    }//GEN-LAST:event_MonthInputFocusGained
+
+    private void DayInputFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_DayInputFocusGained
+        // TODO add your handling code here:
+        DayInput.setText("");
+    }//GEN-LAST:event_DayInputFocusGained
+
+    private void YearInputFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_YearInputFocusGained
+        // TODO add your handling code here:
+        YearInput.setText("");
+    }//GEN-LAST:event_YearInputFocusGained
    {
       setBackground (Color.cyan);
       setPreferredSize (new Dimension(500,500));

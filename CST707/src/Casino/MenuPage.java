@@ -90,7 +90,7 @@ public class MenuPage extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setName("MenuPage"); // NOI18N
-        setPreferredSize(new java.awt.Dimension(448, 310));
+        setPreferredSize(new java.awt.Dimension(448, 325));
         getContentPane().setLayout(null);
 
         MemberNameLabel.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
@@ -227,6 +227,10 @@ public class MenuPage extends javax.swing.JFrame {
         jButton1.setBounds(100, 10, 160, 20);
 
         Background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Casino/MenuPic.jpg"))); // NOI18N
+        Background.setAlignmentY(0.0F);
+        Background.setMaximumSize(new java.awt.Dimension(2147483647, 2147483647));
+        Background.setMinimumSize(new java.awt.Dimension(0, 0));
+        Background.setPreferredSize(new java.awt.Dimension(448, 300));
         getContentPane().add(Background);
         Background.setBounds(0, 0, 448, 251);
 
@@ -291,7 +295,7 @@ public class MenuPage extends javax.swing.JFrame {
             PhoneNumberPrefill.setText(rs.getString("PHONENUMBER"));
             MemberLevel.setText(rs.getString("MEMBERSHIPTYPE"));
         } catch (SQLException ex) {
-            Logger.getLogger(MenuPage.class.getName()).log(Level.SEVERE, null, ex);
+            //Logger.getLogger(MenuPage.class.getName()).log(Level.SEVERE, null, ex);
         }
 
     }//GEN-LAST:event_CasinoNameValueChanged
@@ -339,7 +343,7 @@ public class MenuPage extends javax.swing.JFrame {
 
     private void SpaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SpaMouseClicked
         // TODO add your handling code here:
-        Spa rf = new Spa(conn, casinoID);
+        Spa rf = new Spa(conn, memberID);
         rf.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         rf.setVisible(true);
     }//GEN-LAST:event_SpaMouseClicked
